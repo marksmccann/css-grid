@@ -1,0 +1,1176 @@
+/**
+ * css grid
+ * @author Mark McCann <www.markmccann.me>
+ * @license MIT
+ */
+
+/* default styles for grid -------------------------------------------- */
+
+.grid:after,
+.grid-halves:after,
+.grid-thirds:after,
+.grid-fourths:after,
+.grid-fifths:after,
+.grid-sixths:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.grid-block {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+}
+
+.grid-padding {
+    padding: 0.5rem;
+}
+
+/* single column ----------- */
+
+.grid:not(.grid-collapse) >:not(:last-child) {
+    padding-bottom: 1.25rem;
+}
+
+/* two columns ----------- */
+
+.grid-halves > .grid-block {
+    width: 50%;
+}
+
+.grid-halves:not(.grid-collapse) >:nth-child(odd) {
+    padding-right: 0.625rem;
+}
+
+.grid-halves:not(.grid-collapse) >:nth-child(even) {
+    padding-left: 0.625rem;
+}
+
+.grid-halves:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+.grid-halves:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2) {
+    padding-bottom: 1.25rem;
+}
+
+/* three columns ----------- */
+
+.grid-thirds > .grid-block {
+    width: 33.3334%;
+}
+
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+1) {
+    padding-right: 0.625rem;
+}
+
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+2) {
+    padding-left: 0.3126rem;
+    padding-right: 0.3126rem;
+}
+
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+3) {
+    padding-left: 0.625rem;
+}
+
+.grid-thirds:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+.grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2) {
+    padding-bottom: 0.9375rem;
+}
+
+/* four columns ----------- */
+
+.grid-fourths > .grid-block {
+    width: 25%;
+}
+
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+1) {
+    padding-right: 0.4167rem;
+}
+
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+2) {
+    padding-left: 0.2084rem;
+    padding-right: 0.3125rem;
+}
+
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+3) {
+    padding-left: 0.3125rem;
+    padding-right: 0.2084rem;
+}
+
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+4) {
+    padding-left: 0.4167rem;
+}
+
+.grid-fourths:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+.grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2) {
+    padding-bottom: 0.625rem;
+}
+
+/* five columns ----------- */
+
+.grid-fifths > .grid-block {
+    width: 20%;
+}
+
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+1) {
+    padding-left: 0;
+    padding-right: 0.3333rem;
+}
+
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+2) {
+    padding-left: 0.1667rem;
+    padding-right: 0.25rem;
+}
+
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+3) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+4) {
+    padding-left: 0.25rem;
+    padding-right: 0.1667rem;
+}
+
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+5) {
+    padding-left: 0.3333rem;
+    padding-right: 0;
+}
+
+.grid-fifths:not(.grid-collapse) >:not(:nth-last-child(-n+5)),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+5),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+5),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+4),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+5),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+4),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+3),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+2):nth-last-child(-5n+5),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+4),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+3),
+.grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+2) {
+    padding-bottom: 0.5rem;
+}
+
+/* six columns ----------- */
+
+.grid-sixths > .grid-block {
+    width: 16.6667%;
+}
+
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+1) {
+    padding-left: 0;
+    padding-right: 0.3333rem;
+}
+
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+2) {
+    padding-left: 0.1667rem;
+    padding-right: 0.25rem;
+}
+
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+3),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+4) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+5) {
+    padding-left: 0.25rem;
+    padding-right: 0.1667rem;
+}
+
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6) {
+    padding-left: 0.3333rem;
+    padding-right: 0;
+}
+
+.grid-sixths:not(.grid-collapse) >:not(:nth-last-child(-n+6)),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+6),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+6),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+5),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+6),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+5),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+4),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+6),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+5),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+4),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+3),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+2):nth-last-child(-6n+6),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+5),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+4),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+3),
+.grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+2) {
+    padding-bottom: 0.5rem;
+}
+
+/* custom widths ------------- */
+
+.grid-block.grid-10 {
+    width: 10%;
+}
+
+.grid-block.grid-15 {
+    width: 15%;
+}
+
+.grid-block.grid-16 {
+    width: 16.6667%;
+}
+
+.grid-block.grid-20 {
+    width: 20%;
+}
+
+.grid-block.grid-25 {
+    width: 25%;
+}
+
+.grid-block.grid-30 {
+    width: 30%;
+}
+
+.grid-block.grid-33 {
+    width: 33.3334%;
+}
+
+.grid-block.grid-40 {
+    width: 40%;
+}
+
+.grid-block.grid-50 {
+    width: 50%;
+}
+
+.grid-block.grid-60 {
+    width: 60%;
+}
+
+.grid-block.grid-66 {
+    width: 66.6667%;
+}
+
+.grid-block.grid-70 {
+    width: 70%;
+}
+
+.grid-block.grid-75 {
+    width: 75%;
+}
+
+.grid-block.grid-80 {
+    width: 80%;
+}
+
+.grid-block.grid-83 {
+    width: 83.3334%;
+}
+
+.grid-block.grid-85 {
+    width: 85%;
+}
+
+.grid-block.grid-90 {
+    width: 90%;
+}
+
+/* styles for medium+ screens -------------------------------------------- */
+
+@media (min-width:30.625rem) {
+
+    .grid-padding {
+        padding: 0.625rem;
+    }
+
+    /* margins for default classes ----------------- */
+
+    .grid-halves:not(.grid-collapse) >:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 0.9375rem;
+    }
+
+    .grid-halves:not(.grid-collapse) >:nth-child(even) {
+        padding-left: 0.9375rem;
+        padding-right: 0;
+    }
+
+    .grid-halves:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+    .grid-halves:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2) {
+        padding-bottom: 1.875rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+1) {
+        padding-left: 0;
+        padding-right: 0.8334rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+2) {
+        padding-left: 0.4167rem;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3) {
+        padding-left: 0.8334rem;
+        padding-right: 0;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2) {
+        padding-bottom: 1.25rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+1) {
+        padding-left: 0;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+2) {
+        padding-left: 0.2084rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3) {
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4) {
+        padding-left: 0.3125rem;
+        padding-right: 0.2084rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5) {
+        padding-left: 0.4167rem;
+        padding-right: 0;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+3),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+2):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+3),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+2) {
+        padding-bottom: 0.625rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+1) {
+        padding-left: 0;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+2) {
+        padding-left: 0.2084rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4) {
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5) {
+        padding-left: 0.3125rem;
+        padding-right: 0.2084rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6) {
+        padding-left: 0.4167rem;
+        padding-right: 0;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:not(:nth-last-child(-n+6)),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+2):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+2) {
+        padding-bottom: 0.625rem;
+    }
+
+    /* styles for medium-only classes ----------------- */
+
+    .grid-medium > .grid-block {
+        width: 100%;
+    }
+
+    .grid-medium:not(.grid-collapse) > .grid-block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .grid-medium:not(.grid-collapse) >:not(:last-child) {
+        padding-bottom: 1.875rem;
+    }
+
+    .grid-halves-medium > .grid-block {
+        width: 50%;
+    }
+
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 0.9375rem;
+    }
+
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(even) {
+        padding-left: 0.9375rem;
+        padding-right: 0;
+    }
+
+    .grid-halves-medium:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2) {
+        padding-bottom: 1.875rem;
+    }
+
+    .grid-thirds-medium > .grid-block {
+        width: 33.3334%;
+    }
+
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+1) {
+        padding-left: 0;
+        padding-right: 0.8334rem;
+    }
+
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+2) {
+        padding-left: 0.4167rem;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3) {
+        padding-left: 0.8334rem;
+        padding-right: 0;
+    }
+
+    .grid-thirds-medium:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2) {
+        padding-bottom: 1.25rem;
+    }
+
+    .grid-fourths-medium > .grid-block {
+        width: 25%;
+    }
+
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-fourths-medium:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    .grid-fifths-medium > .grid-block {
+        width: 20%;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+1) {
+        padding-left: 0;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+2) {
+        padding-left: 0.2084rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3) {
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4) {
+        padding-left: 0.3125rem;
+        padding-right: 0.2084rem;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5) {
+        padding-left: 0.4167rem;
+        padding-right: 0;
+    }
+
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+3),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+2):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+3),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+2) {
+        padding-bottom: 0.625rem;
+    }
+
+    .grid-sixths-medium > .grid-block {
+        width: 16.6667%;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+1) {
+        padding-left: 0;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+2) {
+        padding-left: 0.2084rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4) {
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5) {
+        padding-left: 0.3125rem;
+        padding-right: 0.2084rem;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6) {
+        padding-left: 0.4167rem;
+        padding-right: 0;
+    }
+
+    .grid-sixths-medium:not(.grid-collapse) >:not(:nth-last-child(-n+6)),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+2):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+2) {
+        padding-bottom: 0.625rem;
+    }
+
+    /* custom widths ------------- */
+
+    .grid-block.grid-10-medium {
+        width: 10%;
+    }
+
+    .grid-block.grid-15-medium {
+        width: 15%;
+    }
+
+    .grid-block.grid-16-medium {
+        width: 16.6667%;
+    }
+
+    .grid-block.grid-20-medium {
+        width: 20%;
+    }
+
+    .grid-block.grid-25-medium {
+        width: 25%;
+    }
+
+    .grid-block.grid-30-medium {
+        width: 30%;
+    }
+
+    .grid-block.grid-33-medium {
+        width: 33.3334%;
+    }
+
+    .grid-block.grid-40-medium {
+        width: 40%;
+    }
+
+    .grid-block.grid-50-medium {
+        width: 50%;
+    }
+
+    .grid-block.grid-60-medium {
+        width: 60%;
+    }
+
+    .grid-block.grid-66-medium {
+        width: 66.6667%;
+    }
+
+    .grid-block.grid-70-medium {
+        width: 70%;
+    }
+
+    .grid-block.grid-75-medium {
+        width: 75%;
+    }
+
+    .grid-block.grid-80-medium {
+        width: 80%;
+    }
+
+    .grid-block.grid-83-medium {
+        width: 83.3334%;
+    }
+
+    .grid-block.grid-85-medium {
+        width: 85%;
+    }
+
+    .grid-block.grid-90-medium {
+        width: 90%;
+    }
+
+}
+
+/* styles for large screens -------------------------------------------- */
+
+@media (min-width:50rem) {
+
+    .grid-padding {
+        padding: 0.9375rem;
+    }
+
+    /* margins for default classes ----------------- */
+
+    .grid-medium:not(.grid-collapse) >:not(:last-child) {
+        padding-bottom: 2.8125rem;
+    }
+
+    .grid-halves:not(.grid-collapse) >:nth-child(odd),
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 1.4063rem;
+    }
+
+    .grid-halves:not(.grid-collapse) >:nth-child(even),
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(even) {
+        padding-left: 1.4063rem;
+        padding-right: 0;
+    }
+
+    .grid-halves:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+    .grid-halves-medium:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+    .grid-halves:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2),
+    .grid-halves-medium:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2) {
+        padding-bottom: 2.8125rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+1),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+1) {
+        padding-left: 0;
+        padding-right: 1.2501rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+2),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+2) {
+        padding-left: 0.6251rem;
+        padding-right: 0.6251rem;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3) {
+        padding-left: 1.2501rem;
+        padding-right: 0;
+    }
+
+    .grid-thirds:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+    .grid-thirds-medium:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+    .grid-thirds:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2),
+    .grid-thirds-medium:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2) {
+        padding-bottom: 1.875rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+1),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+1) {
+        padding-left: 0;
+        padding-right: 0.8334rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+2),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+2) {
+        padding-left: 0.4167rem;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3) {
+        padding-left: 0.625rem;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4) {
+        padding-left: 0.8334rem;
+        padding-right: 0;
+    }
+
+    .grid-fourths:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+    .grid-fourths-medium:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+    .grid-fourths:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2),
+    .grid-fourths-medium:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2) {
+        padding-bottom: 1.25rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+1),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+2),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3) {
+        padding-left: 0.4688rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+3),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+3),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+2):nth-last-child(-5n+5),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+2):nth-last-child(-5n+5),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+4),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+3):nth-last-child(-5n+4),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+3),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+4):nth-last-child(-5n+3),
+    .grid-fifths:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+2),
+    .grid-fifths-medium:not(.grid-collapse) >:nth-child(5n+5):nth-last-child(-5n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+1),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+2),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4) {
+        padding-left: 0.4688rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-sixths:not(.grid-collapse) >:not(:nth-last-child(-n+6)),
+    .grid-sixths-medium:not(.grid-collapse) >:not(:nth-last-child(-n+6)),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+2):nth-last-child(-6n+6),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+2):nth-last-child(-6n+6),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+5),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+3):nth-last-child(-6n+5),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+4),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+4):nth-last-child(-6n+4),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+3),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+5):nth-last-child(-6n+3),
+    .grid-sixths:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+2),
+    .grid-sixths-medium:not(.grid-collapse) >:nth-child(6n+6):nth-last-child(-6n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    /* styles for large-only classes ----------------- */
+
+    .grid-large > .grid-block {
+        width: 100%;
+    }
+
+    .grid-large:not(.grid-collapse) > .grid-block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .grid-large:not(.grid-collapse) >:not(:last-child) {
+        padding-bottom: 2.8125rem;
+    }
+
+    .grid-halves-large > .grid-block {
+        width: 50%;
+    }
+
+    .grid-halves-large:not(.grid-collapse) >:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 1.4063rem;
+    }
+
+    .grid-halves-large:not(.grid-collapse) >:nth-child(even) {
+        padding-left: 1.4063rem;
+        padding-right: 0;
+    }
+
+    .grid-halves-large:not(.grid-collapse) >:not(:nth-last-child(-n+2)),
+    .grid-halves-large:not(.grid-collapse) >:nth-child(2n+2):nth-last-child(-2n+2) {
+        padding-bottom: 2.8125rem;
+    }
+
+    .grid-thirds-large > .grid-block {
+        width: 33.3334%;
+    }
+
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+1) {
+        padding-left: 0;
+        padding-right: 1.2501rem;
+    }
+
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+2) {
+        padding-left: 0.6251rem;
+        padding-right: 0.6251rem;
+    }
+
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+3) {
+        padding-left: 1.2501rem;
+        padding-right: 0;
+    }
+
+    .grid-thirds-large:not(.grid-collapse) >:not(:nth-last-child(-n+3)),
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+3),
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+2):nth-last-child(-3n+3),
+    .grid-thirds-large:not(.grid-collapse) >:nth-child(3n+3):nth-last-child(-3n+2) {
+        padding-bottom: 1.875rem;
+    }
+
+    .grid-fourths-large > .grid-block {
+        width: 25%;
+    }
+
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+1) {
+        padding-left: 0;
+        padding-right: 0.8334rem;
+    }
+
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+2) {
+        padding-left: 0.4167rem;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+3) {
+        padding-left: 0.625rem;
+        padding-right: 0.4167rem;
+    }
+
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+4) {
+        padding-left: 0.8334rem;
+        padding-right: 0;
+    }
+
+    .grid-fourths-large:not(.grid-collapse) >:not(:nth-last-child(-n+4)),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+4),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+4),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+3),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+2):nth-last-child(-4n+4),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+3):nth-last-child(-4n+3),
+    .grid-fourths-large:not(.grid-collapse) >:nth-child(4n+4):nth-last-child(-4n+2) {
+        padding-bottom: 1.25rem;
+    }
+
+    .grid-fifths-large > .grid-block {
+        width: 20%;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block:nth-child(5n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block:nth-child(5n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block:nth-child(5n+3) {
+        padding-left: 0.4688rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block:nth-child(5n+4) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block:nth-child(5n+5) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+5):nth-last-child(-5n+5),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+4):nth-last-child(-5n+5),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+5):nth-last-child(-5n+4),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+3):nth-last-child(-5n+5),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+4):nth-last-child(-5n+4),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+5):nth-last-child(-5n+3),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+2):nth-last-child(-5n+5),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+3):nth-last-child(-5n+4),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+4):nth-last-child(-5n+3),
+    .grid-fifths-large:not(.grid-collapse) > .grid-block >:nth-child(5n+5):nth-last-child(-5n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    .grid-sixths-large > .grid-block {
+        width: 16.6667%;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+1) {
+        padding-left: 0;
+        padding-right: 0.625rem;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+2) {
+        padding-left: 0.3126rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+3),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+4) {
+        padding-left: 0.4688rem;
+        padding-right: 0.4688rem;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+5) {
+        padding-left: 0.4688rem;
+        padding-right: 0.3126rem;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block:nth-child(6n+6) {
+        padding-left: 0.625rem;
+        padding-right: 0;
+    }
+
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:not(:nth-last-child(-n+6)),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+6):nth-last-child(-6n+6),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+5):nth-last-child(-6n+6),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+6):nth-last-child(-6n+5),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+4):nth-last-child(-6n+6),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+5):nth-last-child(-6n+5),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+6):nth-last-child(-6n+4),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+3):nth-last-child(-6n+6),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+4):nth-last-child(-6n+5),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+5):nth-last-child(-6n+4),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+6):nth-last-child(-6n+3),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+2):nth-last-child(-6n+6),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+3):nth-last-child(-6n+5),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+4):nth-last-child(-6n+4),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+5):nth-last-child(-6n+3),
+    .grid-sixths-large:not(.grid-collapse) > .grid-block >:nth-child(6n+6):nth-last-child(-6n+2) {
+        padding-bottom: 0.9375rem;
+    }
+
+    /* custom widths ------------- */
+
+    .grid-block.grid-10-large {
+        width: 10%;
+    }
+
+    .grid-block.grid-15-large {
+        width: 15%;
+    }
+
+    .grid-block.grid-16-large {
+        width: 16.6667%;
+    }
+
+    .grid-block.grid-20-large {
+        width: 20%;
+    }
+
+    .grid-block.grid-25-large {
+        width: 25%;
+    }
+
+    .grid-block.grid-30-large {
+        width: 30%;
+    }
+
+    .grid-block.grid-33-large {
+        width: 33.3334%;
+    }
+
+    .grid-block.grid-40-large {
+        width: 40%;
+    }
+
+    .grid-block.grid-50-large {
+        width: 50%;
+    }
+
+    .grid-block.grid-60-large {
+        width: 60%;
+    }
+
+    .grid-block.grid-66-large {
+        width: 66.6667%;
+    }
+
+    .grid-block.grid-70-large {
+        width: 70%;
+    }
+
+    .grid-block.grid-75-large {
+        width: 75%;
+    }
+
+    .grid-block.grid-80-large {
+        width: 80%;
+    }
+
+    .grid-block.grid-83-large {
+        width: 83.3334%;
+    }
+
+    .grid-block.grid-85-large {
+        width: 85%;
+    }
+
+    .grid-block.grid-90-large {
+        width: 90%;
+    }
+
+}
