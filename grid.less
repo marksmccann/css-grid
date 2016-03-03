@@ -52,11 +52,6 @@
         content: '';
         display: block;
     }
-    &:not(.grid-collapse) {
-        >:not(:last-child) {
-            padding-bottom: @halves-margin; 
-        }
-    }
 }
 
 .grid-block {
@@ -67,6 +62,25 @@
 
 .grid-padding {
     padding: @content-padding;
+}
+
+/* single column */
+
+.grid-halves-medium,
+.grid-thirds-medium,
+.grid-fourths-medium,
+.grid-fifths-medium,
+.grid-sixths-medium,
+.grid-halves-large,
+.grid-thirds-large,
+.grid-fourths-large,
+.grid-fifths-large,
+.grid-sixths-large {
+    &:not(.grid-collapse) {
+        >:not(:last-child) {
+            padding-bottom: @halves-margin; 
+        }
+    }
 }
 
 /* two columns ----------- */
@@ -272,7 +286,11 @@
     
     /* margins for default classes ----------------- */
 
-    .grid {
+    .grid-halves-large,
+    .grid-thirds-large,
+    .grid-fourths-large,
+    .grid-fifths-large,
+    .grid-sixths-large {
         &:not(.grid-collapse) {
             >:not(:last-child) {
                 padding-bottom: @halves-margin-medium; 
@@ -433,7 +451,7 @@
 
     /* styles for medium-only classes ----------------- */
 
-    .grid-medium  {
+    .grid-span-medium  {
         >.grid-block {
             width: 100%;
         }
@@ -663,7 +681,7 @@
     /* margins for default classes ----------------- */
 
     .grid,
-    .grid-medium  {
+    .grid-span-medium  {
         &:not(.grid-collapse) {
             >:not(:last-child) {
                 padding-bottom: @halves-margin-large; 
@@ -839,7 +857,7 @@
 
     /* styles for large-only classes ----------------- */
 
-    .grid-large  {
+    .grid-span-large  {
         >.grid-block {
             width: 100%;
         }
