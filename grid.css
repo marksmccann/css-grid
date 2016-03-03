@@ -288,6 +288,10 @@
 
     /* margins for default classes ----------------- */
 
+    .grid:not(.grid-collapse) >:not(:last-child) {
+        padding-bottom: 0;
+    }
+
     .grid-halves:not(.grid-collapse) >:nth-child(odd) {
         padding-left: 0;
         padding-right: 0.9375rem;
