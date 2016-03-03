@@ -32,16 +32,30 @@
 
 /* default styles for grid -------------------------------------------- */
 
-.grid,
 .grid-halves,
 .grid-thirds,
 .grid-fourths,
 .grid-fifths,
-.grid-sixths {
+.grid-sixths,
+.grid-halves-medium,
+.grid-thirds-medium,
+.grid-fourths-medium,
+.grid-fifths-medium,
+.grid-sixths-medium,
+.grid-halves-large,
+.grid-thirds-large,
+.grid-fourths-large,
+.grid-fifths-large,
+.grid-sixths-large {
     &:after {
         clear: both;
         content: '';
         display: block;
+    }
+    &:not(.grid-collapse) {
+        >:not(:last-child) {
+            padding-bottom: @halves-margin; 
+        }
     }
 }
 
@@ -53,16 +67,6 @@
 
 .grid-padding {
     padding: @content-padding;
-}
-
-/* single column ----------- */
-
-.grid {
-    &:not(.grid-collapse) {
-        >:not(:last-child) {
-            padding-bottom: @halves-margin; 
-        }
-    }
 }
 
 /* two columns ----------- */
