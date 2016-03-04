@@ -465,16 +465,16 @@
 
     /* styles for medium-only classes ----------------- */
 
-    .grid-span-medium > .grid-block {
+    .grid-stacked-medium > .grid-block {
         width: 100%;
     }
 
-    .grid-span-medium:not(.grid-collapse) > .grid-block {
+    .grid-stacked-medium:not(.grid-collapse) > .grid-block {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .grid-span-medium:not(.grid-collapse) > :not(:last-child) {
+    .grid-stacked-medium:not(.grid-collapse) > :not(:last-child) {
         padding-bottom: 1.875rem;
     }
 
@@ -745,7 +745,7 @@
     /* margins for default classes ----------------- */
 
     .grid:not(.grid-collapse) > :not(:last-child),
-    .grid-span-medium:not(.grid-collapse) > :not(:last-child) {
+    .grid-stacked-medium:not(.grid-collapse) > :not(:last-child) {
         padding-bottom: 2.8125rem;
     }
 
@@ -970,16 +970,16 @@
 
     /* styles for large-only classes ----------------- */
 
-    .grid-span-large > .grid-block {
+    .grid-stacked-large > .grid-block {
         width: 100%;
     }
 
-    .grid-span-large:not(.grid-collapse) > .grid-block {
+    .grid-stacked-large:not(.grid-collapse) > .grid-block {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .grid-span-large:not(.grid-collapse) > :not(:last-child) {
+    .grid-stacked-large:not(.grid-collapse) > :not(:last-child) {
         padding-bottom: 2.8125rem;
     }
 
