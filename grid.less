@@ -8,45 +8,41 @@
 @medium: 30.625rem; // 490px
 @large: 50rem; // 800px
 // margin for small screens
-@halves-margin: 1.25rem; // 20px
-@thirds-margin: .9375rem; // 15px
-@fourths-margin: .625rem; // 10px
-@fifths-margin: .5rem; // 8px
-@sixths-margin: .5rem; // 8px
+@gutter-2: 1.25rem; // 20px
+@gutter-3: .9375rem; // 15px
+@gutter-4: .625rem; // 10px
+@gutter-5: .5rem; // 8px
+@gutter-6: .5rem; // 8px
 // margins for medium screens
-@halves-margin-medium: 1.875rem; // 30px
-@thirds-margin-medium: 1.25rem; // 20px
-@fourths-margin-medium: .9375rem; // 15px
-@fifths-margin-medium: .625rem; // 10px
-@sixths-margin-medium: .625rem; // 10px
+@gutter-2-md: 1.875rem; // 30px
+@gutter-3-md: 1.25rem; // 20px
+@gutter-4-md: .9375rem; // 15px
+@gutter-5-md: .625rem; // 10px
+@gutter-6-md: .625rem; // 10px
 // margins for large screens
-@halves-margin-large: 2.8125rem; // 45px
-@thirds-margin-large: 1.875rem; // 30px
-@fourths-margin-large: 1.25rem; // 20px
-@fifths-margin-large: .9375rem; // 15px
-@sixths-margin-large: .9375rem; // 15px
-// padding for content
-@content-padding: .5rem; // 8px
-@content-padding-medium: .625rem; // 10px
-@content-padding-large: .9375rem; // 15px
+@gutter-2-lg: 2.8125rem; // 45px
+@gutter-3-lg: 1.875rem; // 30px
+@gutter-4-lg: 1.25rem; // 20px
+@gutter-5-lg: .9375rem; // 15px
+@gutter-6-lg: .9375rem; // 15px
 
 /* default styles for grid -------------------------------------------- */
 
-.grid-halves,
-.grid-thirds,
-.grid-fourths,
-.grid-fifths,
-.grid-sixths,
-.grid-halves-medium,
-.grid-thirds-medium,
-.grid-fourths-medium,
-.grid-fifths-medium,
-.grid-sixths-medium,
-.grid-halves-large,
-.grid-thirds-large,
-.grid-fourths-large,
-.grid-fifths-large,
-.grid-sixths-large {
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-2-md,
+.grid-3-md,
+.grid-4-md,
+.grid-5-md,
+.grid-6-md,
+.grid-2-lg,
+.grid-3-lg,
+.grid-4-lg,
+.grid-5-lg,
+.grid-6-lg {
     &:after {
         clear: both;
         content: '';
@@ -60,95 +56,91 @@
     width: 100%;
 }
 
-.grid-padding {
-    padding: @content-padding;
-}
+/* single column ------------- */
 
-/* single column */
-
-.grid-halves-medium,
-.grid-thirds-medium,
-.grid-fourths-medium,
-.grid-fifths-medium,
-.grid-sixths-medium,
-.grid-halves-large,
-.grid-thirds-large,
-.grid-fourths-large,
-.grid-fifths-large,
-.grid-sixths-large {
+.grid-2-md,
+.grid-3-md,
+.grid-4-md,
+.grid-5-md,
+.grid-6-md,
+.grid-2-lg,
+.grid-3-lg,
+.grid-4-lg,
+.grid-5-lg,
+.grid-6-lg {
     &:not(.grid-collapse) {
         >:not(:last-child) {
-            padding-bottom: @halves-margin; 
+            padding-bottom: @gutter-2; 
         }
     }
 }
 
 /* two columns ----------- */
     
-.grid-halves  {
+.grid-2  {
     >.grid-block {
         width: 50%;
     }
     &:not(.grid-collapse) {
         >:nth-child(odd) {
-            padding-right: round(@halves-margin * .5, 4); 
+            padding-right: round(@gutter-2 * .5, 4); 
         }
         >:nth-child(even) {
-            padding-left: round(@halves-margin * .5, 4); 
+            padding-left: round(@gutter-2 * .5, 4); 
         }
         >:not(:nth-last-child(-n+2)),
         >:nth-child(2n+2):nth-last-child(-2n+2) {
-            padding-bottom: @halves-margin;
+            padding-bottom: @gutter-2;
         }
     }
 }
 
 /* three columns ----------- */
 
-.grid-thirds {
+.grid-3 {
     >.grid-block {
         width: 33.3334%;
     }
     &:not(.grid-collapse) {
         >:nth-child(3n+1) { 
-            padding-right: round(@thirds-margin * .6667, 4); 
+            padding-right: round(@gutter-3 * .6667, 4); 
         }
         >:nth-child(3n+2) { 
-            padding-left: round(@thirds-margin * .3334, 4); 
-            padding-right: round(@thirds-margin * .3334, 4); 
+            padding-left: round(@gutter-3 * .3334, 4); 
+            padding-right: round(@gutter-3 * .3334, 4); 
         }
         >:nth-child(3n+3) { 
-            padding-left: round(@thirds-margin * .6667, 4); 
+            padding-left: round(@gutter-3 * .6667, 4); 
         }
         >:not(:nth-last-child(-n+3)),
         >:nth-child(3n+3):nth-last-child(-3n+3),
         >:nth-child(3n+2):nth-last-child(-3n+3),
         >:nth-child(3n+3):nth-last-child(-3n+2) {
-            padding-bottom: @thirds-margin;
+            padding-bottom: @gutter-3;
         }
     }
 }
 
 /* four columns ----------- */
 
-.grid-fourths {
+.grid-4 {
     >.grid-block {
         width: 25%;
     }
     &:not(.grid-collapse) {
         >:nth-child(4n+1) {
-            padding-right: round(@fourths-margin * .6667, 4); 
+            padding-right: round(@gutter-4 * .6667, 4); 
         }
         >:nth-child(4n+2) {
-            padding-left: round(@fourths-margin * .3334, 4); 
-            padding-right: round(@fourths-margin * .5, 4);
+            padding-left: round(@gutter-4 * .3334, 4); 
+            padding-right: round(@gutter-4 * .5, 4);
         }
         >:nth-child(4n+3) {
-            padding-left: round(@fourths-margin * .5, 4); 
-            padding-right: round(@fourths-margin * .3334, 4); 
+            padding-left: round(@gutter-4 * .5, 4); 
+            padding-right: round(@gutter-4 * .3334, 4); 
         }
         >:nth-child(4n+4) {
-            padding-left: round(@fourths-margin * .6667, 4); 
+            padding-left: round(@gutter-4 * .6667, 4); 
         }
         >:not(:nth-last-child(-n+4)),
         >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -157,36 +149,36 @@
         >:nth-child(4n+2):nth-last-child(-4n+4),
         >:nth-child(4n+3):nth-last-child(-4n+3),
         >:nth-child(4n+4):nth-last-child(-4n+2) {
-            padding-bottom: @fourths-margin;
+            padding-bottom: @gutter-4;
         }
     }
 }
 
 /* five columns ----------- */
 
-.grid-fifths {
+.grid-5 {
     >.grid-block {
         width: 20%;
     }
     &:not(.grid-collapse) {
         >:nth-child(5n+1) {
             padding-left: 0;
-            padding-right: round(@fifths-margin * .6667, 4); 
+            padding-right: round(@gutter-5 * .6667, 4); 
         }
         >:nth-child(5n+2) {
-            padding-left: round(@fifths-margin * .3334, 4); 
-            padding-right: round(@fifths-margin * .5, 4);
+            padding-left: round(@gutter-5 * .3334, 4); 
+            padding-right: round(@gutter-5 * .5, 4);
         }
         >:nth-child(5n+3) {
-            padding-left: round(@fifths-margin * .5, 4); 
-            padding-right: round(@fifths-margin * .5, 4); 
+            padding-left: round(@gutter-5 * .5, 4); 
+            padding-right: round(@gutter-5 * .5, 4); 
         }
         >:nth-child(5n+4) {
-            padding-left: round(@fifths-margin * .5, 4); 
-            padding-right: round(@fifths-margin * .3334, 4); 
+            padding-left: round(@gutter-5 * .5, 4); 
+            padding-right: round(@gutter-5 * .3334, 4); 
         }
         >:nth-child(5n+5) {
-            padding-left: round(@fifths-margin * .6667, 4); 
+            padding-left: round(@gutter-5 * .6667, 4); 
             padding-right: 0;
         }
         >:not(:nth-last-child(-n+5)),
@@ -200,37 +192,37 @@
         >:nth-child(5n+3):nth-last-child(-5n+4),
         >:nth-child(5n+4):nth-last-child(-5n+3),
         >:nth-child(5n+5):nth-last-child(-5n+2) {
-            padding-bottom: @fifths-margin;
+            padding-bottom: @gutter-5;
         }
     }
 }
 
 /* six columns ----------- */
 
-.grid-sixths {
+.grid-6 {
     >.grid-block {
         width: 16.6667%;
     }
     &:not(.grid-collapse) {
         >:nth-child(6n+1) {
             padding-left: 0;
-            padding-right: round(@sixths-margin * .6667, 4); 
+            padding-right: round(@gutter-6 * .6667, 4); 
         }
         >:nth-child(6n+2) {
-            padding-left: round(@sixths-margin * .3334, 4); 
-            padding-right: round(@sixths-margin * .5, 4);
+            padding-left: round(@gutter-6 * .3334, 4); 
+            padding-right: round(@gutter-6 * .5, 4);
         }
         >:nth-child(6n+3),
         >:nth-child(6n+4) {
-            padding-left: round(@sixths-margin * .5, 4); 
-            padding-right: round(@sixths-margin * .5, 4); 
+            padding-left: round(@gutter-6 * .5, 4); 
+            padding-right: round(@gutter-6 * .5, 4); 
         }
         >:nth-child(6n+5) {
-            padding-left: round(@sixths-margin * .5, 4); 
-            padding-right: round(@sixths-margin * .3334, 4); 
+            padding-left: round(@gutter-6 * .5, 4); 
+            padding-right: round(@gutter-6 * .3334, 4); 
         }
         >:nth-child(6n+6) {
-            padding-left: round(@sixths-margin * .6667, 4); 
+            padding-left: round(@gutter-6 * .6667, 4); 
             padding-right: 0;
         }
         >:not(:nth-last-child(-n+6)),
@@ -249,7 +241,7 @@
         >:nth-child(6n+4):nth-last-child(-6n+4),
         >:nth-child(6n+5):nth-last-child(-6n+3),
         >:nth-child(6n+6):nth-last-child(-6n+2) {
-            padding-bottom: @sixths-margin;
+            padding-bottom: @gutter-6;
         }
     }
 }
@@ -279,81 +271,77 @@
 /* styles for medium+ screens -------------------------------------------- */
 
 @media (min-width:@medium) {
-
-    .grid-padding {
-        padding: @content-padding-medium;
-    }
     
     /* margins for default classes ----------------- */
 
-    .grid-halves-large,
-    .grid-thirds-large,
-    .grid-fourths-large,
-    .grid-fifths-large,
-    .grid-sixths-large {
+    .grid-2-lg,
+    .grid-3-lg,
+    .grid-4-lg,
+    .grid-5-lg,
+    .grid-6-lg {
         &:not(.grid-collapse) {
             >:not(:last-child) {
-                padding-bottom: @halves-margin-medium; 
+                padding-bottom: @gutter-2-md; 
             }
         }
     }
 
-    .grid-halves  {
+    .grid-2  {
         &:not(.grid-collapse) {
             >:nth-child(odd) {
                 padding-left: 0;
-                padding-right: round(@halves-margin-medium * .5, 4); 
+                padding-right: round(@gutter-2-md * .5, 4); 
             }
             >:nth-child(even) {
-                padding-left: round(@halves-margin-medium * .5, 4); 
+                padding-left: round(@gutter-2-md * .5, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
-                padding-bottom: @halves-margin-medium;
+                padding-bottom: @gutter-2-md;
             }
         }
     }
 
-    .grid-thirds {
+    .grid-3 {
         &:not(.grid-collapse) {
             >:nth-child(3n+1) { 
                 padding-left: 0;
-                padding-right: round(@thirds-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-3-md * .6667, 4); 
             }
             >:nth-child(3n+2) { 
-                padding-left: round(@thirds-margin-medium * .3334, 4); 
-                padding-right: round(@thirds-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-3-md * .3334, 4); 
+                padding-right: round(@gutter-3-md * .3334, 4); 
             }
             >:nth-child(3n+3) { 
-                padding-left: round(@thirds-margin-medium * .6667, 4);
+                padding-left: round(@gutter-3-md * .6667, 4);
                 padding-right: 0; 
             }
             >:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
             >:nth-child(3n+2):nth-last-child(-3n+3),
             >:nth-child(3n+3):nth-last-child(-3n+2) {
-                padding-bottom: @thirds-margin-medium;
+                padding-bottom: @gutter-3-md;
             }
         }
     }
 
-    .grid-fourths {
+    .grid-4 {
         &:not(.grid-collapse) {
             >:nth-child(4n+1) {
                 padding-left: 0;
-                padding-right: round(@fourths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-4-md * .6667, 4); 
             }
             >:nth-child(4n+2) {
-                padding-left: round(@fourths-margin-medium * .3334, 4); 
-                padding-right: round(@fourths-margin-medium * .5, 4);
+                padding-left: round(@gutter-4-md * .3334, 4); 
+                padding-right: round(@gutter-4-md * .5, 4);
             }
             >:nth-child(4n+3) {
-                padding-left: round(@fourths-margin-medium * .5, 4); 
-                padding-right: round(@fourths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-4-md * .5, 4); 
+                padding-right: round(@gutter-4-md * .3334, 4); 
             }
             >:nth-child(4n+4) {
-                padding-left: round(@fourths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-4-md * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+4)),
@@ -363,31 +351,31 @@
             >:nth-child(4n+2):nth-last-child(-4n+4),
             >:nth-child(4n+3):nth-last-child(-4n+3),
             >:nth-child(4n+4):nth-last-child(-4n+2) {
-                padding-bottom: @fourths-margin-medium;
+                padding-bottom: @gutter-4-md;
             }
         }
     }
 
-    .grid-fifths {
+    .grid-5 {
         &:not(.grid-collapse) {
             >:nth-child(5n+1) {
                 padding-left: 0;
-                padding-right: round(@fifths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-5-md * .6667, 4); 
             }
             >:nth-child(5n+2) {
-                padding-left: round(@fifths-margin-medium * .3334, 4); 
-                padding-right: round(@fifths-margin-medium * .5, 4);
+                padding-left: round(@gutter-5-md * .3334, 4); 
+                padding-right: round(@gutter-5-md * .5, 4);
             }
             >:nth-child(5n+3) {
-                padding-left: round(@fifths-margin-medium * .5, 4); 
-                padding-right: round(@fifths-margin-medium * .5, 4); 
+                padding-left: round(@gutter-5-md * .5, 4); 
+                padding-right: round(@gutter-5-md * .5, 4); 
             }
             >:nth-child(5n+4) {
-                padding-left: round(@fifths-margin-medium * .5, 4); 
-                padding-right: round(@fifths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-5-md * .5, 4); 
+                padding-right: round(@gutter-5-md * .3334, 4); 
             }
             >:nth-child(5n+5) {
-                padding-left: round(@fifths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-5-md * .6667, 4); 
                 padding-right: 0;
             }
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -400,32 +388,32 @@
             >:nth-child(5n+3):nth-last-child(-5n+4),
             >:nth-child(5n+4):nth-last-child(-5n+3),
             >:nth-child(5n+5):nth-last-child(-5n+2) {
-                padding-bottom: @fifths-margin-medium;
+                padding-bottom: @gutter-5-md;
             }
         }
     }
 
-    .grid-sixths {
+    .grid-6 {
         &:not(.grid-collapse) {
             >:nth-child(6n+1) {
                 padding-left: 0;
-                padding-right: round(@sixths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-6-md * .6667, 4); 
             }
             >:nth-child(6n+2) {
-                padding-left: round(@sixths-margin-medium * .3334, 4); 
-                padding-right: round(@sixths-margin-medium * .5, 4);
+                padding-left: round(@gutter-6-md * .3334, 4); 
+                padding-right: round(@gutter-6-md * .5, 4);
             }
             >:nth-child(6n+3),
             >:nth-child(6n+4) {
-                padding-left: round(@sixths-margin-medium * .5, 4); 
-                padding-right: round(@sixths-margin-medium * .5, 4); 
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .5, 4); 
             }
             >:nth-child(6n+5) {
-                padding-left: round(@sixths-margin-medium * .5, 4); 
-                padding-right: round(@sixths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .3334, 4); 
             }
             >:nth-child(6n+6) {
-                padding-left: round(@sixths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-6-md * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+6)),
@@ -444,14 +432,14 @@
             >:nth-child(6n+4):nth-last-child(-6n+4),
             >:nth-child(6n+5):nth-last-child(-6n+3),
             >:nth-child(6n+6):nth-last-child(-6n+2) {
-                padding-bottom: @sixths-margin-medium;
+                padding-bottom: @gutter-6-md;
             }
         }
     }
 
     /* styles for medium-only classes ----------------- */
 
-    .grid-stacked-medium  {
+    .grid-1-md  {
         >.grid-block {
             width: 100%;
         }
@@ -461,12 +449,12 @@
                 padding-right: 0;
             }
             >:not(:last-child) {
-                padding-bottom: @halves-margin-medium; 
+                padding-bottom: @gutter-2-md; 
             }
         }
     }
 
-    .grid-halves-medium  {
+    .grid-2-md  {
         >.grid-block {
             width: 50%;
         }
@@ -474,69 +462,69 @@
             >:nth-child(odd) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@halves-margin-medium * .5, 4);
+                padding-right: round(@gutter-2-md * .5, 4);
             }
             >:nth-child(even) {
-                padding-left: round(@halves-margin-medium * .5, 4); 
+                padding-left: round(@gutter-2-md * .5, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
-                padding-bottom: @halves-margin-medium;
+                padding-bottom: @gutter-2-md;
             }
         }
     }
 
-    .grid-thirds-medium {
+    .grid-3-md {
         >.grid-block {
             width: 33.3334%;
         }
         &:not(.grid-collapse) {
             >:nth-child(3n+1) { 
                 padding-left: 0;
-                padding-right: round(@thirds-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-3-md * .6667, 4); 
                 padding-bottom: 0;
             }
             >:nth-child(3n+2) { 
-                padding-left: round(@thirds-margin-medium * .3334, 4); 
-                padding-right: round(@thirds-margin-medium * .3334, 4);
+                padding-left: round(@gutter-3-md * .3334, 4); 
+                padding-right: round(@gutter-3-md * .3334, 4);
                 padding-bottom: 0; 
             }
             >:nth-child(3n+3) { 
-                padding-left: round(@thirds-margin-medium * .6667, 4);
+                padding-left: round(@gutter-3-md * .6667, 4);
                 padding-right: 0; 
             }
             >:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
             >:nth-child(3n+2):nth-last-child(-3n+3),
             >:nth-child(3n+3):nth-last-child(-3n+2) {
-                padding-bottom: @thirds-margin-medium;
+                padding-bottom: @gutter-3-md;
             }
         }
     }
 
-    .grid-fourths-medium {
+    .grid-4-md {
         >.grid-block {
             width: 25%;
         }
         &:not(.grid-collapse) {
             >:nth-child(4n+1) {
                 padding-left: 0;
-                padding-right: round(@fourths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-4-md * .6667, 4); 
                 padding-bottom: 0;
             }
             >:nth-child(4n+2) {
-                padding-left: round(@fourths-margin-medium * .3334, 4); 
-                padding-right: round(@fourths-margin-medium * .5, 4);
+                padding-left: round(@gutter-4-md * .3334, 4); 
+                padding-right: round(@gutter-4-md * .5, 4);
                 padding-bottom: 0;
             }
             >:nth-child(4n+3) {
-                padding-left: round(@fourths-margin-medium * .5, 4); 
-                padding-right: round(@fourths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-4-md * .5, 4); 
+                padding-right: round(@gutter-4-md * .3334, 4); 
                 padding-bottom: 0;
             }
             >:nth-child(4n+4) {
-                padding-left: round(@fourths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-4-md * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+4)),
@@ -546,12 +534,12 @@
             >:nth-child(4n+2):nth-last-child(-4n+4),
             >:nth-child(4n+3):nth-last-child(-4n+3),
             >:nth-child(4n+4):nth-last-child(-4n+2) {
-                padding-bottom: @fourths-margin-medium;
+                padding-bottom: @gutter-4-md;
             }
         }
     }
 
-    .grid-fifths-medium {
+    .grid-5-md {
         >.grid-block {
             width: 20%;
         }
@@ -559,25 +547,25 @@
             >:nth-child(5n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@fifths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-5-md * .6667, 4); 
             }
             >:nth-child(5n+2) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-medium * .3334, 4); 
-                padding-right: round(@fifths-margin-medium * .5, 4);
+                padding-left: round(@gutter-5-md * .3334, 4); 
+                padding-right: round(@gutter-5-md * .5, 4);
             }
             >:nth-child(5n+3) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-medium * .5, 4); 
-                padding-right: round(@fifths-margin-medium * .5, 4); 
+                padding-left: round(@gutter-5-md * .5, 4); 
+                padding-right: round(@gutter-5-md * .5, 4); 
             }
             >:nth-child(5n+4) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-medium * .5, 4); 
-                padding-right: round(@fifths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-5-md * .5, 4); 
+                padding-right: round(@gutter-5-md * .3334, 4); 
             }
             >:nth-child(5n+5) {
-                padding-left: round(@fifths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-5-md * .6667, 4); 
                 padding-right: 0;
             }
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -590,12 +578,12 @@
             >:nth-child(5n+3):nth-last-child(-5n+4),
             >:nth-child(5n+4):nth-last-child(-5n+3),
             >:nth-child(5n+5):nth-last-child(-5n+2) {
-                padding-bottom: @fifths-margin-medium;
+                padding-bottom: @gutter-5-md;
             }
         }
     }
 
-    .grid-sixths-medium {
+    .grid-6-md {
         >.grid-block {
             width: 16.6667%;
         }
@@ -603,26 +591,26 @@
             >:nth-child(6n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@sixths-margin-medium * .6667, 4); 
+                padding-right: round(@gutter-6-md * .6667, 4); 
             }
             >:nth-child(6n+2) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-medium * .3334, 4); 
-                padding-right: round(@sixths-margin-medium * .5, 4);
+                padding-left: round(@gutter-6-md * .3334, 4); 
+                padding-right: round(@gutter-6-md * .5, 4);
             }
             >:nth-child(6n+3),
             >:nth-child(6n+4) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-medium * .5, 4); 
-                padding-right: round(@sixths-margin-medium * .5, 4); 
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .5, 4); 
             }
             >:nth-child(6n+5) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-medium * .5, 4); 
-                padding-right: round(@sixths-margin-medium * .3334, 4); 
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .3334, 4); 
             }
             >:nth-child(6n+6) {
-                padding-left: round(@sixths-margin-medium * .6667, 4); 
+                padding-left: round(@gutter-6-md * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+6)),
@@ -641,7 +629,7 @@
             >:nth-child(6n+4):nth-last-child(-6n+4),
             >:nth-child(6n+5):nth-last-child(-6n+3),
             >:nth-child(6n+6):nth-last-child(-6n+2) {
-                padding-bottom: @sixths-margin-medium;
+                padding-bottom: @gutter-6-md;
             }
         }
     }
@@ -649,23 +637,23 @@
     /* custom widths ------------- */
 
     .grid-block {
-        &.grid-10-medium { width: 10%; }
-        &.grid-15-medium { width: 15%; }
-        &.grid-16-medium { width: 16.6667%; }
-        &.grid-20-medium { width: 20%; }
-        &.grid-25-medium { width: 25%; }
-        &.grid-30-medium { width: 30%; }
-        &.grid-33-medium { width: 33.3334%; }
-        &.grid-40-medium { width: 40%; }
-        &.grid-50-medium { width: 50%; }
-        &.grid-60-medium { width: 60%; }
-        &.grid-66-medium { width: 66.6667%; }
-        &.grid-70-medium { width: 70%; }
-        &.grid-75-medium { width: 75%; }
-        &.grid-80-medium { width: 80%; }
-        &.grid-83-medium { width: 83.3334%; }
-        &.grid-85-medium { width: 85%; }
-        &.grid-90-medium { width: 90%; }
+        &.grid-10-md { width: 10%; }
+        &.grid-15-md { width: 15%; }
+        &.grid-16-md { width: 16.6667%; }
+        &.grid-20-md { width: 20%; }
+        &.grid-25-md { width: 25%; }
+        &.grid-30-md { width: 30%; }
+        &.grid-33-md { width: 33.3334%; }
+        &.grid-40-md { width: 40%; }
+        &.grid-50-md { width: 50%; }
+        &.grid-60-md { width: 60%; }
+        &.grid-66-md { width: 66.6667%; }
+        &.grid-70-md { width: 70%; }
+        &.grid-75-md { width: 75%; }
+        &.grid-80-md { width: 80%; }
+        &.grid-83-md { width: 83.3334%; }
+        &.grid-85-md { width: 85%; }
+        &.grid-90-md { width: 90%; }
     }
 
 }
@@ -673,87 +661,83 @@
 /* styles for large screens -------------------------------------------- */
 
 @media (min-width:@large) {
-
-    .grid-padding {
-        padding: @content-padding-large;
-    }
     
     /* margins for default classes ----------------- */
 
     .grid,
-    .grid-stacked-medium  {
+    .grid-1-md  {
         &:not(.grid-collapse) {
             >:not(:last-child) {
-                padding-bottom: @halves-margin-large; 
+                padding-bottom: @gutter-2-lg; 
             }
         }
     }
 
-    .grid-halves,
-    .grid-halves-medium {
+    .grid-2,
+    .grid-2-md {
         &:not(.grid-collapse) {
             >:nth-child(odd) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@halves-margin-large * .5, 4); 
+                padding-right: round(@gutter-2-lg * .5, 4); 
             }
             >:nth-child(even) {
-                padding-left: round(@halves-margin-large * .5, 4); 
+                padding-left: round(@gutter-2-lg * .5, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
-                padding-bottom: @halves-margin-large;
+                padding-bottom: @gutter-2-lg;
             }
         }
     }
 
-    .grid-thirds,
-    .grid-thirds-medium {
+    .grid-3,
+    .grid-3-md {
         &:not(.grid-collapse) {
             >:nth-child(3n+1) { 
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@thirds-margin-large * .6667, 4); 
+                padding-right: round(@gutter-3-lg * .6667, 4); 
             }
             >:nth-child(3n+2) { 
                 padding-bottom: 0;
-                padding-left: round(@thirds-margin-large * .3334, 4); 
-                padding-right: round(@thirds-margin-large * .3334, 4); 
+                padding-left: round(@gutter-3-lg * .3334, 4); 
+                padding-right: round(@gutter-3-lg * .3334, 4); 
             }
             >:nth-child(3n+3) { 
-                padding-left: round(@thirds-margin-large * .6667, 4);
+                padding-left: round(@gutter-3-lg * .6667, 4);
                 padding-right: 0; 
             }
             >:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
             >:nth-child(3n+2):nth-last-child(-3n+3),
             >:nth-child(3n+3):nth-last-child(-3n+2) {
-                padding-bottom: @thirds-margin-large;
+                padding-bottom: @gutter-3-lg;
             }
         }
     }
 
-    .grid-fourths,
-    .grid-fourths-medium {
+    .grid-4,
+    .grid-4-md {
         &:not(.grid-collapse) {
             >:nth-child(4n+1) {
                 padding-left: 0;
                 padding-bottom: 0;
-                padding-right: round(@fourths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-4-lg * .6667, 4); 
             }
             >:nth-child(4n+2) {
                 padding-bottom: 0;
-                padding-left: round(@fourths-margin-large * .3334, 4); 
-                padding-right: round(@fourths-margin-large * .5, 4);
+                padding-left: round(@gutter-4-lg * .3334, 4); 
+                padding-right: round(@gutter-4-lg * .5, 4);
             }
             >:nth-child(4n+3) {
                 padding-bottom: 0;
-                padding-left: round(@fourths-margin-large * .5, 4); 
-                padding-right: round(@fourths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-4-lg * .5, 4); 
+                padding-right: round(@gutter-4-lg * .3334, 4); 
             }
             >:nth-child(4n+4) {
-                padding-left: round(@fourths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-4-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+4)),
@@ -763,36 +747,36 @@
             >:nth-child(4n+2):nth-last-child(-4n+4),
             >:nth-child(4n+3):nth-last-child(-4n+3),
             >:nth-child(4n+4):nth-last-child(-4n+2) {
-                padding-bottom: @fourths-margin-large;
+                padding-bottom: @gutter-4-lg;
             }
         }
     }
 
-    .grid-fifths,
-    .grid-fifths-medium {
+    .grid-5,
+    .grid-5-md {
         &:not(.grid-collapse) {
             >:nth-child(5n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@fifths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-5-lg * .6667, 4); 
             }
             >:nth-child(5n+2) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .3334, 4); 
-                padding-right: round(@fifths-margin-large * .5, 4);
+                padding-left: round(@gutter-5-lg * .3334, 4); 
+                padding-right: round(@gutter-5-lg * .5, 4);
             }
             >:nth-child(5n+3) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .5, 4); 
-                padding-right: round(@fifths-margin-large * .5, 4); 
+                padding-left: round(@gutter-5-lg * .5, 4); 
+                padding-right: round(@gutter-5-lg * .5, 4); 
             }
             >:nth-child(5n+4) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .5, 4); 
-                padding-right: round(@fifths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-5-lg * .5, 4); 
+                padding-right: round(@gutter-5-lg * .3334, 4); 
             }
             >:nth-child(5n+5) {
-                padding-left: round(@fifths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-5-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -805,33 +789,33 @@
             >:nth-child(5n+3):nth-last-child(-5n+4),
             >:nth-child(5n+4):nth-last-child(-5n+3),
             >:nth-child(5n+5):nth-last-child(-5n+2) {
-                padding-bottom: @fifths-margin-large;
+                padding-bottom: @gutter-5-lg;
             }
         }
     }
 
-    .grid-sixths,
-    .grid-sixths-medium {
+    .grid-6,
+    .grid-6-md {
         &:not(.grid-collapse) {
             >:nth-child(6n+1) {
                 padding-left: 0;
-                padding-right: round(@sixths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-6-lg * .6667, 4); 
             }
             >:nth-child(6n+2) {
-                padding-left: round(@sixths-margin-large * .3334, 4); 
-                padding-right: round(@sixths-margin-large * .5, 4);
+                padding-left: round(@gutter-6-lg * .3334, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4);
             }
             >:nth-child(6n+3),
             >:nth-child(6n+4) {
-                padding-left: round(@sixths-margin-large * .5, 4); 
-                padding-right: round(@sixths-margin-large * .5, 4); 
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4); 
             }
             >:nth-child(6n+5) {
-                padding-left: round(@sixths-margin-large * .5, 4); 
-                padding-right: round(@sixths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .3334, 4); 
             }
             >:nth-child(6n+6) {
-                padding-left: round(@sixths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-6-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+6)),
@@ -850,14 +834,14 @@
             >:nth-child(6n+4):nth-last-child(-6n+4),
             >:nth-child(6n+5):nth-last-child(-6n+3),
             >:nth-child(6n+6):nth-last-child(-6n+2) {
-                padding-bottom: @sixths-margin-large;
+                padding-bottom: @gutter-6-lg;
             }
         }
     }
 
     /* styles for large-only classes ----------------- */
 
-    .grid-stacked-large  {
+    .grid-1-lg  {
         >.grid-block {
             width: 100%;
         }
@@ -867,12 +851,12 @@
                 padding-right: 0;
             }
             >:not(:last-child) {
-                padding-bottom: @halves-margin-large; 
+                padding-bottom: @gutter-2-lg; 
             }
         }
     }
 
-    .grid-halves-large  {
+    .grid-2-lg  {
         >.grid-block {
             width: 50%;
         }
@@ -880,20 +864,20 @@
             >:nth-child(odd) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@halves-margin-large * .5, 4); 
+                padding-right: round(@gutter-2-lg * .5, 4); 
             }
             >:nth-child(even) {
-                padding-left: round(@halves-margin-large * .5, 4); 
+                padding-left: round(@gutter-2-lg * .5, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
-                padding-bottom: @halves-margin-large;
+                padding-bottom: @gutter-2-lg;
             }
         }
     }
 
-    .grid-thirds-large {
+    .grid-3-lg {
         >.grid-block {
             width: 33.3334%;
         }
@@ -901,28 +885,28 @@
             >:nth-child(3n+1) { 
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@thirds-margin-large * .6667, 4); 
+                padding-right: round(@gutter-3-lg * .6667, 4); 
             }
             >:nth-child(3n+2) { 
                 padding-bottom: 0;
-                padding-left: round(@thirds-margin-large * .3334, 4); 
-                padding-right: round(@thirds-margin-large * .3334, 4); 
+                padding-left: round(@gutter-3-lg * .3334, 4); 
+                padding-right: round(@gutter-3-lg * .3334, 4); 
             }
             >:nth-child(3n+3) { 
                 padding-bottom: 0;
-                padding-left: round(@thirds-margin-large * .6667, 4);
+                padding-left: round(@gutter-3-lg * .6667, 4);
                 padding-right: 0; 
             }
             >:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
             >:nth-child(3n+2):nth-last-child(-3n+3),
             >:nth-child(3n+3):nth-last-child(-3n+2) {
-                padding-bottom: @thirds-margin-large;
+                padding-bottom: @gutter-3-lg;
             }
         }
     }
 
-    .grid-fourths-large {
+    .grid-4-lg {
         >.grid-block {
             width: 25%;
         }
@@ -930,20 +914,20 @@
             >:nth-child(4n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@fourths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-4-lg * .6667, 4); 
             }
             >:nth-child(4n+2) {
                 padding-bottom: 0;
-                padding-left: round(@fourths-margin-large * .3334, 4); 
-                padding-right: round(@fourths-margin-large * .5, 4);
+                padding-left: round(@gutter-4-lg * .3334, 4); 
+                padding-right: round(@gutter-4-lg * .5, 4);
             }
             >:nth-child(4n+3) {
                 padding-bottom: 0;
-                padding-left: round(@fourths-margin-large * .5, 4); 
-                padding-right: round(@fourths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-4-lg * .5, 4); 
+                padding-right: round(@gutter-4-lg * .3334, 4); 
             }
             >:nth-child(4n+4) {
-                padding-left: round(@fourths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-4-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+4)),
@@ -953,12 +937,12 @@
             >:nth-child(4n+2):nth-last-child(-4n+4),
             >:nth-child(4n+3):nth-last-child(-4n+3),
             >:nth-child(4n+4):nth-last-child(-4n+2) {
-                padding-bottom: @fourths-margin-large;
+                padding-bottom: @gutter-4-lg;
             }
         }
     }
 
-    .grid-fifths-large {
+    .grid-5-lg {
         >.grid-block {
             width: 20%;
         }
@@ -966,25 +950,25 @@
             >:nth-child(5n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@fifths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-5-lg * .6667, 4); 
             }
             >:nth-child(5n+2) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .3334, 4); 
-                padding-right: round(@fifths-margin-large * .5, 4);
+                padding-left: round(@gutter-5-lg * .3334, 4); 
+                padding-right: round(@gutter-5-lg * .5, 4);
             }
             >:nth-child(5n+3) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .5, 4); 
-                padding-right: round(@fifths-margin-large * .5, 4); 
+                padding-left: round(@gutter-5-lg * .5, 4); 
+                padding-right: round(@gutter-5-lg * .5, 4); 
             }
             >:nth-child(5n+4) {
                 padding-bottom: 0;
-                padding-left: round(@fifths-margin-large * .5, 4); 
-                padding-right: round(@fifths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-5-lg * .5, 4); 
+                padding-right: round(@gutter-5-lg * .3334, 4); 
             }
             >:nth-child(5n+5) {
-                padding-left: round(@fifths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-5-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -997,12 +981,12 @@
             >:nth-child(5n+3):nth-last-child(-5n+4),
             >:nth-child(5n+4):nth-last-child(-5n+3),
             >:nth-child(5n+5):nth-last-child(-5n+2) {
-                padding-bottom: @fifths-margin-large;
+                padding-bottom: @gutter-5-lg;
             }
         }
     }
 
-    .grid-sixths-large {
+    .grid-6-lg {
         >.grid-block {
             width: 16.6667%;
         }
@@ -1010,26 +994,26 @@
             >:nth-child(6n+1) {
                 padding-bottom: 0;
                 padding-left: 0;
-                padding-right: round(@sixths-margin-large * .6667, 4); 
+                padding-right: round(@gutter-6-lg * .6667, 4); 
             }
             >:nth-child(6n+2) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-large * .3334, 4); 
-                padding-right: round(@sixths-margin-large * .5, 4);
+                padding-left: round(@gutter-6-lg * .3334, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4);
             }
             >:nth-child(6n+3),
             >:nth-child(6n+4) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-large * .5, 4); 
-                padding-right: round(@sixths-margin-large * .5, 4); 
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4); 
             }
             >:nth-child(6n+5) {
                 padding-bottom: 0;
-                padding-left: round(@sixths-margin-large * .5, 4); 
-                padding-right: round(@sixths-margin-large * .3334, 4); 
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .3334, 4); 
             }
             >:nth-child(6n+6) {
-                padding-left: round(@sixths-margin-large * .6667, 4); 
+                padding-left: round(@gutter-6-lg * .6667, 4); 
                 padding-right: 0;
             }
             >:not(:nth-last-child(-n+6)),
@@ -1048,7 +1032,7 @@
             >:nth-child(6n+4):nth-last-child(-6n+4),
             >:nth-child(6n+5):nth-last-child(-6n+3),
             >:nth-child(6n+6):nth-last-child(-6n+2) {
-                padding-bottom: @sixths-margin-large;
+                padding-bottom: @gutter-6-lg;
             }
         }
     }
@@ -1056,23 +1040,23 @@
     /* custom widths ------------- */
 
     .grid-block {
-        &.grid-10-large { width: 10%; }
-        &.grid-15-large { width: 15%; }
-        &.grid-16-large { width: 16.6667%; }
-        &.grid-20-large { width: 20%; }
-        &.grid-25-large { width: 25%; }
-        &.grid-30-large { width: 30%; }
-        &.grid-33-large { width: 33.3334%; }
-        &.grid-40-large { width: 40%; }
-        &.grid-50-large { width: 50%; }
-        &.grid-60-large { width: 60%; }
-        &.grid-66-large { width: 66.6667%; }
-        &.grid-70-large { width: 70%; }
-        &.grid-75-large { width: 75%; }
-        &.grid-80-large { width: 80%; }
-        &.grid-83-large { width: 83.3334%; }
-        &.grid-85-large { width: 85%; }
-        &.grid-90-large { width: 90%; }
+        &.grid-10-lg { width: 10%; }
+        &.grid-15-lg { width: 15%; }
+        &.grid-16-lg { width: 16.6667%; }
+        &.grid-20-lg { width: 20%; }
+        &.grid-25-lg { width: 25%; }
+        &.grid-30-lg { width: 30%; }
+        &.grid-33-lg { width: 33.3334%; }
+        &.grid-40-lg { width: 40%; }
+        &.grid-50-lg { width: 50%; }
+        &.grid-60-lg { width: 60%; }
+        &.grid-66-lg { width: 66.6667%; }
+        &.grid-70-lg { width: 70%; }
+        &.grid-75-lg { width: 75%; }
+        &.grid-80-lg { width: 80%; }
+        &.grid-83-lg { width: 83.3334%; }
+        &.grid-85-lg { width: 85%; }
+        &.grid-90-lg { width: 90%; }
     }
 
 }
