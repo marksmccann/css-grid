@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="example.css">
 </head>
 <body>
+    <h1 class="heading-1 layout-bottom-2">grid.css</h1>
+    <p class="tagline">A responsive, versatile grid system</p>
+
     <!-- <h2 class="heading-2 layout-bottom-2">Overview</h2>
     <p class="copy layout-bottom-2">grid.css is an easy-to-use, flexible system for creating web layouts built with LESS. With a few simple classes, you can control the number of columns on different screens sizes</p>
     <h2 class="heading-2 layout-bottom-2">Breakpoints</h2>
@@ -18,10 +21,23 @@
 @medium: 30.625rem; // 490px
 @large: 50rem; // 800px</code></pre>
     <h2 class="heading-2 layout-bottom-2">The Gutter</h2>-->
-    <h2 class="heading-2 layout-bottom-2">Small Screens +</h2>
-    <p class="copy layout-bottom-2">grid.css is different from most. Implentation couldn't be any simpler. Define the number of columns in your grid with a classname on the parent element. Each child</p>
+    <h2 class="heading-2 layout-bottom-2">Getting Started</h2>
+    <p class="copy layout-bottom-2"></p>
     <div class="layout-bottom-2">
-        <pre><code class="language-markup">&lt;div class="grid-[x]-[md|lg]">
+        <pre><code class="language-markup">&lt;!-- small screens + -->
+&lt;div class="grid-[1-6]">
+    &lt;div class="grid-block">&lt;/div>
+    &lt;div class="grid-block">&lt;/div>
+&lt;/div>
+
+&lt;!-- medium screens + -->
+&lt;div class="grid-[1-6]-medium">
+    &lt;div class="grid-block">&lt;/div>
+    &lt;div class="grid-block">&lt;/div>
+&lt;/div>
+
+&lt;!-- large screens only -->
+&lt;div class="grid-[1-6]-large">
     &lt;div class="grid-block">&lt;/div>
     &lt;div class="grid-block">&lt;/div>
 &lt;/div></code></pre>
@@ -97,174 +113,61 @@
             <div class="grid-content">&nbsp;</div>
         </div>
     </div>
-    <h3 class="heading-3 layout-bottom-2">Medium Screens &plus;</h3>
-    <div class="grid-2-md grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-2-md</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-3-md grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-3-md</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-4-md grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-4-md</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-5-md grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-5-md</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-6-md grid-example layout-bottom-3">
-        <div class="grid-block">
-            <div class="grid-content">.grid-6-md</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <h3 class="heading-3 layout-bottom-2">Large Screens +</h3>
-    <div class="grid-2-lg grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-2-lg</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-3-lg grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-3-lg</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-4-lg grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-4-lg</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-5-lg grid-example">
-        <div class="grid-block">
-            <div class="grid-content">.grid-5-lg</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
-    <div class="grid-6-lg grid-example layout-bottom-5">
-        <div class="grid-block">
-            <div class="grid-content">.grid-6-lg</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-        <div class="grid-block">
-            <div class="grid-content">&nbsp;</div>
-        </div>
-    </div>
     <h2 class="heading-2 layout-bottom-2">Offset Columns</h2>
     <p class="copy layout-bottom-2"></p>
-    <ul>
-        <li>.grid-10</li>
-        <li>.grid-15</li>
-        <li>.grid-16</li>
-        <li>.grid-20</li>
-        <li>.grid-25</li>
-        <li>.grid-30</li>
-        <li>.grid-33</li>
-        <li>.grid-40</li>
-        <li>.grid-50</li>
-        <li>.grid-60</li>
-        <li>.grid-66</li>
-        <li>.grid-70</li>
-        <li>.grid-75</li>
-        <li>.grid-80</li>
-        <li>.grid-83</li>
-        <li>.grid-85</li>
-        <li>.grid-90</li>
-    </ul>
     <div class="layout-bottom-2">
         <pre><code class="language-markup">&lt;div class="grid-2">
     &lt;div class="grid-block grid-[xx]">&lt;/div>
     &lt;div class="grid-block grid-[xx]">&lt;/div>
 &lt;/div></code></pre>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-10">
+            <div class="grid-content">.grid-10</div>
+        </div>
+        <div class="grid-block grid-90">
+            <div class="grid-content">.grid-90</div>
+        </div>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-15">
+            <div class="grid-content">.grid-15</div>
+        </div>
+        <div class="grid-block grid-85">
+            <div class="grid-content">.grid-85</div>
+        </div>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-17">
+            <div class="grid-content">.grid-17</div>
+        </div>
+        <div class="grid-block grid-83">
+            <div class="grid-content">.grid-83</div>
+        </div>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-20">
+            <div class="grid-content">.grid-20</div>
+        </div>
+        <div class="grid-block grid-80">
+            <div class="grid-content">.grid-80</div>
+        </div>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-25">
+            <div class="grid-content">.grid-25</div>
+        </div>
+        <div class="grid-block grid-75">
+            <div class="grid-content">.grid-75</div>
+        </div>
+    </div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-30">
+            <div class="grid-content">.grid-30</div>
+        </div>
+        <div class="grid-block grid-70">
+            <div class="grid-content">.grid-70</div>
+        </div>
     </div>
     <div class="grid-2 grid-example">
         <div class="grid-block grid-33">
@@ -274,66 +177,20 @@
             <div class="grid-content">.grid-66</div>
         </div>
     </div>
-    <div class="grid-3 grid-example">
+    <div class="grid-2 grid-example">
         <div class="grid-block grid-40">
             <div class="grid-content">.grid-40</div>
         </div>
-        <div class="grid-block grid-30">
-            <div class="grid-content">.grid-30</div>
-        </div>
-        <div class="grid-block grid-30">
-            <div class="grid-content">.grid-30</div>
+        <div class="grid-block grid-60">
+            <div class="grid-content">.grid-60</div>
         </div>
     </div>
-    <div class="grid-4 grid-example">
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
+    <div class="grid-2 grid-example">
+        <div class="grid-block grid-50">
+            <div class="grid-content">.grid-50</div>
         </div>
-        <div class="grid-block grid-40">
-            <div class="grid-content">.grid-40</div>
-        </div>
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
-        </div>
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
-        </div>
-    </div>
-    <div class="grid-5 grid-example">
-        <div class="grid-block grid-10">
-            <div class="grid-content">.grid-10</div>
-        </div>
-        <div class="grid-block grid-15">
-            <div class="grid-content">.grid-15</div>
-        </div>
-        <div class="grid-block grid-15">
-            <div class="grid-content">.grid-15</div>
-        </div>
-        <div class="grid-block grid-30">
-            <div class="grid-content">.grid-30</div>
-        </div>
-        <div class="grid-block grid-30">
-            <div class="grid-content">.grid-30</div>
-        </div>
-    </div>
-    <div class="grid-6 grid-example layout-bottom-5">
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
-        </div>
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
-        </div>
-        <div class="grid-block grid-20">
-            <div class="grid-content">.grid-20</div>
-        </div>
-        <div class="grid-block grid-15">
-            <div class="grid-content">.grid-15</div>
-        </div>
-        <div class="grid-block grid-15">
-            <div class="grid-content">.grid-15</div>
-        </div>
-        <div class="grid-block grid-10">
-            <div class="grid-content">.grid-10</div>
+        <div class="grid-block grid-50">
+            <div class="grid-content">.grid-50</div>
         </div>
     </div>
     <h2 class="heading-2 layout-bottom-2">Gutters</h2>
@@ -346,17 +203,17 @@
 @gutter-5: .5rem; // 8px
 @gutter-6: .5rem; // 8px
 // medium screens +
-@gutter-2-md: 1.875rem; // 30px
-@gutter-3-md: 1.25rem; // 20px
-@gutter-4-md: .9375rem; // 15px
-@gutter-5-md: .625rem; // 10px
-@gutter-6-md: .625rem; // 10px
+@gutter-2-medium: 1.875rem; // 30px
+@gutter-3-medium: 1.25rem; // 20px
+@gutter-4-medium: .9375rem; // 15px
+@gutter-5-medium: .625rem; // 10px
+@gutter-6-medium: .625rem; // 10px
 // large screens +
-@gutter-2-lg: 2.8125rem; // 45px
-@gutter-3-lg: 1.875rem; // 30px
-@gutter-4-lg: 1.25rem; // 20px
-@gutter-5-lg: .9375rem; // 15px
-@gutter-6-lg: .9375rem; // 15px</code></pre>
+@gutter-2-large: 2.8125rem; // 45px
+@gutter-3-large: 1.875rem; // 30px
+@gutter-4-large: 1.25rem; // 20px
+@gutter-5-large: .9375rem; // 15px
+@gutter-6-large: .9375rem; // 15px</code></pre>
     </div>
     <h2 class="heading-2 layout-bottom-2">Collapsed Grid</h2>
     <p class="copy layout-bottom-2"></p>
