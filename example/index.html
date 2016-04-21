@@ -11,38 +11,64 @@
 </head>
 <body>
     <h1 class="heading-1 layout-bottom-2">grid.css</h1>
-    <p class="tagline">A responsive, versatile grid system</p>
-
-    <!-- <h2 class="heading-2 layout-bottom-2">Overview</h2>
-    <p class="copy layout-bottom-2">grid.css is an easy-to-use, flexible system for creating web layouts built with LESS. With a few simple classes, you can control the number of columns on different screens sizes</p>
-    <h2 class="heading-2 layout-bottom-2">Breakpoints</h2>
-    <p class="copy layout-bottom-2">You can control the grid for 3 screen sizes. Because it is built with less, you can define the breakpoints yourself.</p>
-    <pre><code class="language-less">
-@medium: 30.625rem; // 490px
-@large: 50rem; // 800px</code></pre>
-    <h2 class="heading-2 layout-bottom-2">The Gutter</h2>-->
-    <h2 class="heading-2 layout-bottom-2">Getting Started</h2>
-    <p class="copy layout-bottom-2"></p>
+    <p class="tagline layout-bottom-5">A responsive, versatile grid system</p>
+    <div class="grid-6 grid-4-md grid-2-lg grid-example layout-bottom-3">
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+    </div>
+    <h2 class="heading-2 layout-bottom-2">Basics</h2>
+    <p class="text layout-bottom-2">The markup structure couldn't be any simplier; a container with the defined number of columns desired and a child for each.</p>
     <div class="layout-bottom-2">
-        <pre><code class="language-markup">&lt;!-- small screens + -->
-&lt;div class="grid-[1-6]">
-    &lt;div class="grid-block">&lt;/div>
-    &lt;div class="grid-block">&lt;/div>
-&lt;/div>
-
-&lt;!-- medium screens + -->
-&lt;div class="grid-[1-6]-medium">
-    &lt;div class="grid-block">&lt;/div>
-    &lt;div class="grid-block">&lt;/div>
-&lt;/div>
-
-&lt;!-- large screens only -->
-&lt;div class="grid-[1-6]-large">
+        <pre><code class="language-markup">&lt;div class="grid-x"> &lt;!-- replace the "x" with the # of columns desired (1-6) -->
     &lt;div class="grid-block">&lt;/div>
     &lt;div class="grid-block">&lt;/div>
 &lt;/div></code></pre>
     </div>
-    <h3 class="heading-3 layout-bottom-2">Small Screens &plus;</h3>
+    <div class="grid-1 grid-example">
+        <div class="grid-block">
+            <div class="grid-content">.grid-1</div>
+        </div>
+    </div>
     <div class="grid-2 grid-example">
         <div class="grid-block">
             <div class="grid-content">.grid-2</div>
@@ -93,10 +119,66 @@
             <div class="grid-content">&nbsp;</div>
         </div>
     </div>
-    <div class="grid-6 grid-example layout-bottom-3">
+    <div class="grid-6 grid-example layout-bottom-5">
         <div class="grid-block">
             <div class="grid-content">.grid-6</div>
         </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+    </div>
+    <h2 class="heading-2 layout-bottom-2">Responsive</h2>
+    <p class="text layout-bottom-2">Control the number of columns for each screen size with just a few classes.</p>
+    <div class="layout-bottom-2">
+        <pre><code class="language-markup">&lt;!-- small screens + -->
+&lt;div class="grid-x"> ... &lt;/div>
+
+&lt;!-- medium screens + -->
+&lt;div class="grid-x-md"> ... &lt;/div>
+
+&lt;!-- large screens only -->
+&lt;div class="grid-x-lg"> ... &lt;/div></code></pre>
+    </div>
+    <p class="text layout-bottom-2">Mix and match the classes above. Here are a few examples:</p>
+    <div class="layout-bottom-2">
+        <pre><code class="language-markup">&lt;div class="grid-3-md grid-6-lg"> ... &lt;/div></code></pre>
+    </div>
+    <div class="grid-3-md grid-6-lg grid-example layout-bottom-3">
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+        <div class="grid-block">
+            <div class="grid-content">&nbsp;</div>
+        </div>
+    </div>
+    <div class="layout-bottom-2">
+        <pre><code class="language-markup">&lt;div class="grid-2 grid-3-md grid-5-lg"> ... &lt;/div></code></pre>
+    </div>
+    <div class="grid-2 grid-3-md grid-5-lg grid-example layout-bottom-3">
         <div class="grid-block">
             <div class="grid-content">&nbsp;</div>
         </div>
@@ -203,17 +285,17 @@
 @gutter-5: .5rem; // 8px
 @gutter-6: .5rem; // 8px
 // medium screens +
-@gutter-2-medium: 1.875rem; // 30px
-@gutter-3-medium: 1.25rem; // 20px
-@gutter-4-medium: .9375rem; // 15px
-@gutter-5-medium: .625rem; // 10px
-@gutter-6-medium: .625rem; // 10px
+@gutter-2-md: 1.875rem; // 30px
+@gutter-3-md: 1.25rem; // 20px
+@gutter-4-md: .9375rem; // 15px
+@gutter-5-md: .625rem; // 10px
+@gutter-6-md: .625rem; // 10px
 // large screens +
-@gutter-2-large: 2.8125rem; // 45px
-@gutter-3-large: 1.875rem; // 30px
-@gutter-4-large: 1.25rem; // 20px
-@gutter-5-large: .9375rem; // 15px
-@gutter-6-large: .9375rem; // 15px</code></pre>
+@gutter-2-lg: 2.8125rem; // 45px
+@gutter-3-lg: 1.875rem; // 30px
+@gutter-4-lg: 1.25rem; // 20px
+@gutter-5-lg: .9375rem; // 15px
+@gutter-6-lg: .9375rem; // 15px</code></pre>
     </div>
     <h2 class="heading-2 layout-bottom-2">Collapsed Grid</h2>
     <p class="copy layout-bottom-2"></p>
