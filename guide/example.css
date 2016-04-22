@@ -65,17 +65,17 @@ html {
 }
 
 body {
-    max-width: 1200px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5rem 1rem 3rem;
+    padding: 5rem 1rem 8rem;
 }
 
 /* typography ------------------------------- */
 
 .copy {
     font-size: 1.2rem;
-    line-height: 1.5em;
+    line-height: 1.8em;
 }
 
 .heading-1 {
@@ -84,15 +84,44 @@ body {
 }
 
 .heading-2 {
-    font-size: 2rem;
+    font-size: 2.3rem;
 }
 
 .heading-3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .tagline {
     font-size: 1.6rem;
+}
+
+/* code ------------------------------- */
+
+.code-block {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    background: #f5f2f0;
+    padding: 1em;
+    overflow: auto;
+}
+
+.comment {
+    color: slategray;
 }
 
 /* micro layout --------------------------- */
@@ -103,6 +132,32 @@ body {
 .layout-bottom-4 { margin-bottom: 3rem; }
 .layout-bottom-5 { margin-bottom: 4rem; }
 .layout-bottom-6 { margin-bottom: 6rem; }
+
+/* key */
+
+.block-blue,
+.block-green {
+    margin-right: 1.25rem;
+    vertical-align: middle;
+}
+
+.block-blue:before,
+.block-green:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .5rem;
+}
+
+.block-green:before {
+   background-color: #bed8b0; 
+}
+
+.block-blue:before {
+   background-color: #9dc1e3;
+}
 
 /* grid example -------------------------- */
 
@@ -119,9 +174,9 @@ body {
     line-height: 1.5rem;
 }
 
-.grid-2.grid-example .grid-block:first-child,
-.grid-2-md.grid-example .grid-block:first-child,
-.grid-2-lg.grid-example .grid-block:first-child,
+.grid-2.grid-example .grid-block:nth-child(2n+1),
+.grid-2-md.grid-example .grid-block:nth-child(2n+1),
+.grid-2-lg.grid-example .grid-block:nth-child(2n+1),
 .grid-3.grid-example .grid-block:nth-child(3n+1),
 .grid-3-md.grid-example .grid-block:nth-child(3n+1),
 .grid-3-lg.grid-example .grid-block:nth-child(3n+1),

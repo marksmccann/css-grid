@@ -1,2 +1,2 @@
-# CSS Grid
-A simple, customizable, and responsive css grid system.
+# LESS Grid
+A responsive and versatile grid system written in LESS
