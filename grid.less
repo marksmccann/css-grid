@@ -59,6 +59,10 @@
     width: 100%;
 }
 
+.grid-right > .grid-block {
+    float: right;
+}
+
 /* one column ------------- */
 
 .grid-1,
@@ -88,14 +92,16 @@
         width: 50%;
     }
     &:not(.grid-collapse) {
-        >:nth-child(odd) {
+        &:not(.grid-right) > :nth-child(odd),
+        &.grid-right > :nth-child(even) {
             padding-bottom: 0;
             padding-left: 0;
             padding-right: round(@gutter-2 * .5, 4); 
         }
-        >:nth-child(even) {
+        &:not(.grid-right) > :nth-child(even),
+        &.grid-right > :nth-child(odd) {
             padding-right: 0;
-            padding-left: round(@gutter-2 * .5, 4); 
+            padding-left: round(@gutter-2 * .5, 4);
         }
         >.grid-block:not(:nth-last-child(-n+2)),
         >:nth-child(2n+2):nth-last-child(-2n+2) {
@@ -111,17 +117,21 @@
         width: 33.3334%;
     }
     &:not(.grid-collapse) {
-        >:nth-child(3n+1) { 
+        &:not(.grid-right) > :nth-child(3n+1),
+        &.grid-right > :nth-child(3n+3) {
             padding-bottom: 0;
             padding-left: 0;
             padding-right: round(@gutter-3 * .6667, 4); 
         }
-        >:nth-child(3n+2) { 
+        &:not(.grid-right) > :nth-child(3n+2),
+        &.grid-right > :nth-child(3n+2) { 
             padding-bottom: 0;
             padding-left: round(@gutter-3 * .3334, 4); 
             padding-right: round(@gutter-3 * .3334, 4); 
         }
-        >:nth-child(3n+3) { 
+        &:not(.grid-right) > :nth-child(3n+3),
+        &.grid-right > :nth-child(3n+1) {
+            padding-bottom: 0;
             padding-right: 0;
             padding-left: round(@gutter-3 * .6667, 4); 
         }
@@ -141,23 +151,29 @@
         width: 25%;
     }
     &:not(.grid-collapse) {
-        >:nth-child(4n+1) {
+        &:not(.grid-right) > :nth-child(4n+1),
+        &.grid-right > :nth-child(4n+4) {
             padding-bottom: 0;
             padding-left: 0;
-            padding-right: round(@gutter-4 * .6667, 4); 
+            padding-right: round(@gutter-4 * .75, 4); 
         }
-        >:nth-child(4n+2) {
+        &:not(.grid-right) > :nth-child(4n+2),
+        &.grid-right > :nth-child(4n+3) {
             padding-bottom: 0;
-            padding-left: round(@gutter-4 * .3334, 4); 
+            padding-left: round(@gutter-4 * .25, 4);
             padding-right: round(@gutter-4 * .5, 4);
         }
-        >:nth-child(4n+3) {
+        &:not(.grid-right) > :nth-child(4n+3),
+        &.grid-right > :nth-child(4n+2) {
             padding-bottom: 0;
             padding-left: round(@gutter-4 * .5, 4); 
-            padding-right: round(@gutter-4 * .3334, 4); 
+            padding-right: round(@gutter-4 * .25, 4); 
         }
-        >:nth-child(4n+4) {
-            padding-left: round(@gutter-4 * .6667, 4); 
+        &:not(.grid-right) > :nth-child(4n+4),
+        &.grid-right > :nth-child(4n+1) {
+            padding-bottom: 0;
+            padding-left: round(@gutter-4 * .75, 4);
+            padding-right: 0;
         }
         >.grid-block:not(:nth-last-child(-n+4)),
         >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -178,28 +194,34 @@
         width: 20%;
     }
     &:not(.grid-collapse) {
-        >:nth-child(5n+1) {
+        &:not(.grid-right) > :nth-child(5n+1),
+        &.grid-right > :nth-child(5n+5) {
             padding-bottom: 0;
             padding-left: 0;
-            padding-right: round(@gutter-5 * .6667, 4); 
+            padding-right: round(@gutter-5 * .8, 4); 
         }
-        >:nth-child(5n+2) {
+        &:not(.grid-right) > :nth-child(5n+2),
+        &.grid-right > :nth-child(5n+4) {
             padding-bottom: 0;
-            padding-left: round(@gutter-5 * .3334, 4); 
-            padding-right: round(@gutter-5 * .5, 4);
+            padding-left: round(@gutter-5 * .2, 4); 
+            padding-right: round(@gutter-5 * .6, 4);
         }
-        >:nth-child(5n+3) {
+        &:not(.grid-right) > :nth-child(5n+3),
+        &.grid-right > :nth-child(5n+3) {
             padding-bottom: 0;
-            padding-left: round(@gutter-5 * .5, 4); 
-            padding-right: round(@gutter-5 * .5, 4); 
+            padding-left: round(@gutter-5 * .4, 4); 
+            padding-right: round(@gutter-5 * .4, 4);
         }
-        >:nth-child(5n+4) {
+        &:not(.grid-right) > :nth-child(5n+4),
+        &.grid-right > :nth-child(5n+2) {
             padding-bottom: 0;
-            padding-left: round(@gutter-5 * .5, 4); 
-            padding-right: round(@gutter-5 * .3334, 4); 
+            padding-left: round(@gutter-5 * .6, 4); 
+            padding-right: round(@gutter-5 * .2, 4); 
         }
-        >:nth-child(5n+5) {
-            padding-left: round(@gutter-5 * .6667, 4); 
+        &:not(.grid-right) > :nth-child(5n+5),
+        &.grid-right > :nth-child(5n+1) {
+            padding-bottom: 0;
+            padding-left: round(@gutter-5 * .8, 4); 
             padding-right: 0;
         }
         >.grid-block:not(:nth-last-child(-n+5)),
@@ -225,29 +247,40 @@
         width: 16.6667%;
     }
     &:not(.grid-collapse) {
-        >:nth-child(6n+1) {
+        &:not(.grid-right) > :nth-child(6n+1),
+        &.grid-right > :nth-child(6n+6) {
             padding-bottom: 0;
             padding-left: 0;
-            padding-right: round(@gutter-6 * .6667, 4); 
+            padding-right: round(@gutter-6 * .8334, 4); 
         }
-        >:nth-child(6n+2) {
+        &:not(.grid-right) > :nth-child(6n+2),
+        &.grid-right > :nth-child(6n+5) {
             padding-bottom: 0;
-            padding-left: round(@gutter-6 * .3334, 4); 
-            padding-right: round(@gutter-6 * .5, 4);
+            padding-left: round(@gutter-6 * .1667, 4); 
+            padding-right: round(@gutter-6 * .6667, 4);
         }
-        >:nth-child(6n+3),
-        >:nth-child(6n+4) {
+        &:not(.grid-right) > :nth-child(6n+3),
+            &.grid-right > :nth-child(6n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6 * .3334, 4); 
+                padding-right: round(@gutter-6 * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+4),
+            &.grid-right > :nth-child(6n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6 * .5, 4); 
+                padding-right: round(@gutter-6 * .3334, 4); 
+            }
+        &:not(.grid-right) > :nth-child(6n+5),
+        &.grid-right > :nth-child(6n+2) {
             padding-bottom: 0;
-            padding-left: round(@gutter-6 * .5, 4); 
-            padding-right: round(@gutter-6 * .5, 4); 
-        }
-        >:nth-child(6n+5) {
-            padding-bottom: 0;
-            padding-left: round(@gutter-6 * .5, 4); 
-            padding-right: round(@gutter-6 * .3334, 4); 
-        }
-        >:nth-child(6n+6) {
             padding-left: round(@gutter-6 * .6667, 4); 
+            padding-right: round(@gutter-6 * .1667, 4); 
+        }
+        &:not(.grid-right) > :nth-child(6n+6),
+        &.grid-right > :nth-child(6n+1) {
+            padding-bottom: 0;
+            padding-left: round(@gutter-6 * .8334, 4); 
             padding-right: 0;
         }
         >.grid-block:not(:nth-last-child(-n+6)),
@@ -307,23 +340,23 @@
     .grid-5-lg,
     .grid-6-lg {
         &:not(.grid-collapse) {
-            >.grid-block:not(:last-child) {
+            >:not(:last-child) {
                 padding-bottom: @gutter-2-md; 
             }
         }
     }
 
-    .grid-2  {
+    .grid-2 {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(odd) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-2-md * .5, 4); 
-                }
-                &:nth-child(even) {
-                    padding-left: round(@gutter-2-md * .5, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(odd),
+            &.grid-right > :nth-child(even) {
+                padding-left: 0;
+                padding-right: round(@gutter-2-md * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(even),
+            &.grid-right > :nth-child(odd) {
+                padding-left: round(@gutter-2-md * .5, 4);
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
@@ -334,19 +367,20 @@
 
     .grid-3 {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(3n+1) { 
-                    padding-left: 0;
-                    padding-right: round(@gutter-3-md * .6667, 4); 
-                }
-                &:nth-child(3n+2) { 
-                    padding-left: round(@gutter-3-md * .3334, 4); 
-                    padding-right: round(@gutter-3-md * .3334, 4); 
-                }
-                &:nth-child(3n+3) { 
-                    padding-left: round(@gutter-3-md * .6667, 4);
-                    padding-right: 0; 
-                }
+            &:not(.grid-right) > :nth-child(3n+1),
+            &.grid-right > :nth-child(3n+3) {
+                padding-left: 0;
+                padding-right: round(@gutter-3-md * .6667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+2),
+            &.grid-right > :nth-child(3n+2) { 
+                padding-left: round(@gutter-3-md * .3334, 4); 
+                padding-right: round(@gutter-3-md * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+3),
+            &.grid-right > :nth-child(3n+1) {
+                padding-right: 0;
+                padding-left: round(@gutter-3-md * .6667, 4); 
             }
             >.grid-block:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
@@ -359,23 +393,25 @@
 
     .grid-4 {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(4n+1) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-4-md * .6667, 4); 
-                }
-                &:nth-child(4n+2) {
-                    padding-left: round(@gutter-4-md * .3334, 4); 
-                    padding-right: round(@gutter-4-md * .5, 4);
-                }
-                &:nth-child(4n+3) {
-                    padding-left: round(@gutter-4-md * .5, 4); 
-                    padding-right: round(@gutter-4-md * .3334, 4); 
-                }
-                &:nth-child(4n+4) {
-                    padding-left: round(@gutter-4-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(4n+1),
+            &.grid-right > :nth-child(4n+4) {
+                padding-left: 0;
+                padding-right: round(@gutter-4-md * .75, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+2),
+            &.grid-right > :nth-child(4n+3) {
+                padding-left: round(@gutter-4-md * .25, 4); 
+                padding-right: round(@gutter-4-md * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(4n+3),
+            &.grid-right > :nth-child(4n+2) {
+                padding-left: round(@gutter-4-md * .5, 4); 
+                padding-right: round(@gutter-4-md * .25, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+4),
+            &.grid-right > :nth-child(4n+1) {
+                padding-left: round(@gutter-4-md * .75, 4);
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+4)),
             >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -392,27 +428,30 @@
 
     .grid-5 {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(5n+1) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-5-md * .6667, 4); 
-                }
-                &:nth-child(5n+2) {
-                    padding-left: round(@gutter-5-md * .3334, 4); 
-                    padding-right: round(@gutter-5-md * .5, 4);
-                }
-                &:nth-child(5n+3) {
-                    padding-left: round(@gutter-5-md * .5, 4); 
-                    padding-right: round(@gutter-5-md * .5, 4); 
-                }
-                &:nth-child(5n+4) {
-                    padding-left: round(@gutter-5-md * .5, 4); 
-                    padding-right: round(@gutter-5-md * .3334, 4); 
-                }
-                &:nth-child(5n+5) {
-                    padding-left: round(@gutter-5-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(5n+1),
+            &.grid-right > :nth-child(5n+5) {
+                padding-left: 0;
+                padding-right: round(@gutter-5-md * .8, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+2),
+            &.grid-right > :nth-child(5n+4) {
+                padding-left: round(@gutter-5-md * .2, 4); 
+                padding-right: round(@gutter-5-md * .6, 4);
+            }
+            &:not(.grid-right) > :nth-child(5n+3),
+            &.grid-right > :nth-child(5n+3) {
+                padding-left: round(@gutter-5-md * .4, 4); 
+                padding-right: round(@gutter-5-md * .4, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+4),
+            &.grid-right > :nth-child(5n+2) {
+                padding-left: round(@gutter-5-md * .6, 4); 
+                padding-right: round(@gutter-5-md * .2, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+5),
+            &.grid-right > :nth-child(5n+1) {
+                padding-left: round(@gutter-5-md * .8, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+5)),
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -432,28 +471,37 @@
 
     .grid-6 {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(6n+1) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-6-md * .6667, 4); 
-                }
-                &:nth-child(6n+2) {
-                    padding-left: round(@gutter-6-md * .3334, 4); 
-                    padding-right: round(@gutter-6-md * .5, 4);
-                }
-                &:nth-child(6n+3),
-                &:nth-child(6n+4) {
-                    padding-left: round(@gutter-6-md * .5, 4); 
-                    padding-right: round(@gutter-6-md * .5, 4); 
-                }
-                &:nth-child(6n+5) {
-                    padding-left: round(@gutter-6-md * .5, 4); 
-                    padding-right: round(@gutter-6-md * .3334, 4); 
-                }
-                &:nth-child(6n+6) {
-                    padding-left: round(@gutter-6-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(6n+1),
+            &.grid-right > :nth-child(6n+6) {
+                padding-left: 0;
+                padding-right: round(@gutter-6-md * .8334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+2),
+            &.grid-right > :nth-child(6n+5) {
+                padding-left: round(@gutter-6-md * .1667, 4); 
+                padding-right: round(@gutter-6-md * .6667, 4);
+            }
+            &:not(.grid-right) > :nth-child(6n+3),
+            &.grid-right > :nth-child(6n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .3334, 4); 
+                padding-right: round(@gutter-6-md * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+4),
+            &.grid-right > :nth-child(6n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+5),
+            &.grid-right > :nth-child(6n+2) {
+                padding-left: round(@gutter-6-md * .6667, 4);
+                padding-right: round(@gutter-6-md * .1667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+6),
+            &.grid-right > :nth-child(6n+1) {
+                padding-left: round(@gutter-6-md * .8334, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+6)),
             >:nth-child(6n+6):nth-last-child(-6n+6),
@@ -483,14 +531,12 @@
             width: 100%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(1n+1) {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-                &:not(:last-child) {
-                    padding-bottom: @gutter-2-md; 
-                }
+            >:nth-child(1n+1) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            >:not(:last-child) {
+                padding-bottom: @gutter-2-md; 
             }
             
         }
@@ -501,16 +547,17 @@
             width: 50%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(odd) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-2-md * .5, 4);
-                }
-                &:nth-child(even) {
-                    padding-left: round(@gutter-2-md * .5, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(odd),
+            &.grid-right > :nth-child(even) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-2-md * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(even),
+            &.grid-right > :nth-child(odd) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-2-md * .5, 4);
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
@@ -524,21 +571,23 @@
             width: 33.3334%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(3n+1) { 
-                    padding-left: 0;
-                    padding-right: round(@gutter-3-md * .6667, 4); 
-                    padding-bottom: 0;
-                }
-                &:nth-child(3n+2) { 
-                    padding-left: round(@gutter-3-md * .3334, 4); 
-                    padding-right: round(@gutter-3-md * .3334, 4);
-                    padding-bottom: 0; 
-                }
-                &:nth-child(3n+3) { 
-                    padding-left: round(@gutter-3-md * .6667, 4);
-                    padding-right: 0; 
-                }
+            &:not(.grid-right) > :nth-child(3n+1),
+            &.grid-right > :nth-child(3n+3) { 
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-3-md * .6667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+2),
+            &.grid-right > :nth-child(3n+2) {  
+                padding-bottom: 0;
+                padding-left: round(@gutter-3-md * .3334, 4); 
+                padding-right: round(@gutter-3-md * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+3),
+            &.grid-right > :nth-child(3n+1) {
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: round(@gutter-3-md * .6667, 4); 
             }
             >.grid-block:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
@@ -554,26 +603,29 @@
             width: 25%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(4n+1) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-4-md * .6667, 4); 
-                    padding-bottom: 0;
-                }
-                &:nth-child(4n+2) {
-                    padding-left: round(@gutter-4-md * .3334, 4); 
-                    padding-right: round(@gutter-4-md * .5, 4);
-                    padding-bottom: 0;
-                }
-                &:nth-child(4n+3) {
-                    padding-left: round(@gutter-4-md * .5, 4); 
-                    padding-right: round(@gutter-4-md * .3334, 4); 
-                    padding-bottom: 0;
-                }
-                &:nth-child(4n+4) {
-                    padding-left: round(@gutter-4-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(4n+1),
+            &.grid-right > :nth-child(4n+4) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-4-md * .75, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+2),
+            &.grid-right > :nth-child(4n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-md * .25, 4); 
+                padding-right: round(@gutter-4-md * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(4n+3),
+            &.grid-right > :nth-child(4n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-md * .5, 4); 
+                padding-right: round(@gutter-4-md * .25, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+4),
+            &.grid-right > :nth-child(4n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-md * .75, 4); 
+                padding-right: 0; 
             }
             >.grid-block:not(:nth-last-child(-n+4)),
             >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -592,31 +644,35 @@
             width: 20%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(5n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-5-md * .6667, 4); 
-                }
-                &:nth-child(5n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-md * .3334, 4); 
-                    padding-right: round(@gutter-5-md * .5, 4);
-                }
-                &:nth-child(5n+3) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-md * .5, 4); 
-                    padding-right: round(@gutter-5-md * .5, 4); 
-                }
-                &:nth-child(5n+4) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-md * .5, 4); 
-                    padding-right: round(@gutter-5-md * .3334, 4); 
-                }
-                &:nth-child(5n+5) {
-                    padding-left: round(@gutter-5-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(5n+1),
+            &.grid-right > :nth-child(5n+5) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-5-md * .8, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+2),
+            &.grid-right > :nth-child(5n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-md * .2, 4); 
+                padding-right: round(@gutter-5-md * .6, 4);
+            }
+            &:not(.grid-right) > :nth-child(5n+3),
+            &.grid-right > :nth-child(5n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-md * .4, 4); 
+                padding-right: round(@gutter-5-md * .4, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+4),
+            &.grid-right > :nth-child(5n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-md * .6, 4); 
+                padding-right: round(@gutter-5-md * .2, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+5),
+            &.grid-right > :nth-child(5n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-md * .8, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+5)),
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -639,32 +695,41 @@
             width: 16.6667%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(6n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-6-md * .6667, 4); 
-                }
-                &:nth-child(6n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-md * .3334, 4); 
-                    padding-right: round(@gutter-6-md * .5, 4);
-                }
-                &:nth-child(6n+3),
-                &:nth-child(6n+4) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-md * .5, 4); 
-                    padding-right: round(@gutter-6-md * .5, 4); 
-                }
-                &:nth-child(6n+5) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-md * .5, 4); 
-                    padding-right: round(@gutter-6-md * .3334, 4); 
-                }
-                &:nth-child(6n+6) {
-                    padding-left: round(@gutter-6-md * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(6n+1),
+            &.grid-right > :nth-child(6n+6) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-6-md * .8334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+2),
+            &.grid-right > :nth-child(6n+5) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .1667, 4); 
+                padding-right: round(@gutter-6-md * .6667, 4);
+            }
+            &:not(.grid-right) > :nth-child(6n+3),
+            &.grid-right > :nth-child(6n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .3334, 4); 
+                padding-right: round(@gutter-6-md * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+4),
+            &.grid-right > :nth-child(6n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .5, 4); 
+                padding-right: round(@gutter-6-md * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+5),
+            &.grid-right > :nth-child(6n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .6667, 4); 
+                padding-right: round(@gutter-6-md * .1667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+6),
+            &.grid-right > :nth-child(6n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-md * .8334, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+6)),
             >:nth-child(6n+6):nth-last-child(-6n+6),
@@ -718,9 +783,9 @@
     /* default large gutters ----------------- */
 
     .grid-1,
-    .grid-1-md  {
+    .grid-1-md {
         &:not(.grid-collapse) {
-            >.grid-block:not(:last-child) {
+            >:not(:last-child) {
                 padding-bottom: @gutter-2-lg;
             }
         }
@@ -729,16 +794,15 @@
     .grid-2,
     .grid-2-md {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(odd) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-2-lg * .5, 4); 
-                }
-                &:nth-child(even) {
-                    padding-left: round(@gutter-2-lg * .5, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(odd),
+            &.grid-right > :nth-child(even) {
+                padding-left: 0;
+                padding-right: round(@gutter-2-lg * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(even),
+            &.grid-right > :nth-child(odd) {
+                padding-left: round(@gutter-2-lg * .5, 4);
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
@@ -750,21 +814,20 @@
     .grid-3,
     .grid-3-md {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(3n+1) { 
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-3-lg * .6667, 4); 
-                }
-                &:nth-child(3n+2) { 
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-3-lg * .3334, 4); 
-                    padding-right: round(@gutter-3-lg * .3334, 4); 
-                }
-                &:nth-child(3n+3) { 
-                    padding-left: round(@gutter-3-lg * .6667, 4);
-                    padding-right: 0; 
-                }
+            &:not(.grid-right) > :nth-child(3n+1),
+            &.grid-right > :nth-child(3n+3) {
+                padding-left: 0;
+                padding-right: round(@gutter-3-lg * .6667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+2),
+            &.grid-right > :nth-child(3n+2) { 
+                padding-left: round(@gutter-3-lg * .3334, 4); 
+                padding-right: round(@gutter-3-lg * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+3),
+            &.grid-right > :nth-child(3n+1) {
+                padding-right: 0;
+                padding-left: round(@gutter-3-lg * .6667, 4); 
             }
             >.grid-block:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
@@ -778,26 +841,29 @@
     .grid-4,
     .grid-4-md {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(4n+1) {
-                    padding-left: 0;
-                    padding-bottom: 0;
-                    padding-right: round(@gutter-4-lg * .6667, 4); 
-                }
-                &:nth-child(4n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-4-lg * .3334, 4); 
-                    padding-right: round(@gutter-4-lg * .5, 4);
-                }
-                &:nth-child(4n+3) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-4-lg * .5, 4); 
-                    padding-right: round(@gutter-4-lg * .3334, 4); 
-                }
-                &:nth-child(4n+4) {
-                    padding-left: round(@gutter-4-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(4n+1),
+            &.grid-right > :nth-child(4n+4) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-4-lg * .75, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+2),
+            &.grid-right > :nth-child(4n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .25, 4); 
+                padding-right: round(@gutter-4-lg * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(4n+3),
+            &.grid-right > :nth-child(4n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .5, 4); 
+                padding-right: round(@gutter-4-lg * .25, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+4),
+            &.grid-right > :nth-child(4n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .75, 4); 
+                padding-right: 0; 
             }
             >.grid-block:not(:nth-last-child(-n+4)),
             >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -814,31 +880,30 @@
     .grid-5,
     .grid-5-md {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(5n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-5-lg * .6667, 4); 
-                }
-                &:nth-child(5n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .3334, 4); 
-                    padding-right: round(@gutter-5-lg * .5, 4);
-                }
-                &:nth-child(5n+3) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .5, 4); 
-                    padding-right: round(@gutter-5-lg * .5, 4); 
-                }
-                &:nth-child(5n+4) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .5, 4); 
-                    padding-right: round(@gutter-5-lg * .3334, 4); 
-                }
-                &:nth-child(5n+5) {
-                    padding-left: round(@gutter-5-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(5n+1),
+            &.grid-right > :nth-child(5n+5) {
+                padding-left: 0;
+                padding-right: round(@gutter-5-lg * .8, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+2),
+            &.grid-right > :nth-child(5n+4) {
+                padding-left: round(@gutter-5-lg * .2, 4); 
+                padding-right: round(@gutter-5-lg * .6, 4);
+            }
+            &:not(.grid-right) > :nth-child(5n+3),
+            &.grid-right > :nth-child(5n+3) {
+                padding-left: round(@gutter-5-lg * .4, 4); 
+                padding-right: round(@gutter-5-lg * .4, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+4),
+            &.grid-right > :nth-child(5n+2) {
+                padding-left: round(@gutter-5-lg * .6, 4); 
+                padding-right: round(@gutter-5-lg * .2, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+5),
+            &.grid-right > :nth-child(5n+1) {
+                padding-left: round(@gutter-5-lg * .8, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+5)),
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -859,28 +924,37 @@
     .grid-6,
     .grid-6-md {
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(6n+1) {
-                    padding-left: 0;
-                    padding-right: round(@gutter-6-lg * .6667, 4); 
-                }
-                &:nth-child(6n+2) {
-                    padding-left: round(@gutter-6-lg * .3334, 4); 
-                    padding-right: round(@gutter-6-lg * .5, 4);
-                }
-                &:nth-child(6n+3),
-                &:nth-child(6n+4) {
-                    padding-left: round(@gutter-6-lg * .5, 4); 
-                    padding-right: round(@gutter-6-lg * .5, 4); 
-                }
-                &:nth-child(6n+5) {
-                    padding-left: round(@gutter-6-lg * .5, 4); 
-                    padding-right: round(@gutter-6-lg * .3334, 4); 
-                }
-                &:nth-child(6n+6) {
-                    padding-left: round(@gutter-6-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(6n+1),
+            &.grid-right > :nth-child(6n+6) {
+                padding-left: 0;
+                padding-right: round(@gutter-6-lg * .8334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+2),
+            &.grid-right > :nth-child(6n+5) {
+                padding-left: round(@gutter-6-lg * .1667, 4); 
+                padding-right: round(@gutter-6-lg * .6667, 4);
+            }
+            &:not(.grid-right) > :nth-child(6n+3),
+            &.grid-right > :nth-child(6n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .3334, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+4),
+            &.grid-right > :nth-child(6n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+5),
+            &.grid-right > :nth-child(6n+2) {
+                padding-left: round(@gutter-6-lg * .6667, 4); 
+                padding-right: round(@gutter-6-lg * .1667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+6),
+            &.grid-right > :nth-child(6n+1) {
+                padding-left: round(@gutter-6-lg * .8334, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+6)),
             >:nth-child(6n+6):nth-last-child(-6n+6),
@@ -905,7 +979,7 @@
 
     /* styles for large-only classes ----------------- */
 
-    .grid-1-lg  {
+    .grid-1-lg {
         >.grid-block {
             width: 100%;
         }
@@ -922,21 +996,22 @@
         }
     }
 
-    .grid-2-lg  {
+    .grid-2-lg {
         >.grid-block {
             width: 50%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(odd) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-2-lg * .5, 4); 
-                }
-                &:nth-child(even) {
-                    padding-left: round(@gutter-2-lg * .5, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(odd),
+            &.grid-right > :nth-child(even) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-2-lg * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(even),
+            &.grid-right > :nth-child(odd) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-2-lg * .5, 4);
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+2)),
             >:nth-child(2n+2):nth-last-child(-2n+2) {
@@ -950,22 +1025,23 @@
             width: 33.3334%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(3n+1) { 
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-3-lg * .6667, 4); 
-                }
-                &:nth-child(3n+2) { 
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-3-lg * .3334, 4); 
-                    padding-right: round(@gutter-3-lg * .3334, 4); 
-                }
-                &:nth-child(3n+3) { 
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-3-lg * .6667, 4);
-                    padding-right: 0; 
-                }
+            &:not(.grid-right) > :nth-child(3n+1),
+            &.grid-right > :nth-child(3n+3) { 
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-3-lg * .6667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+2),
+            &.grid-right > :nth-child(3n+2) {  
+                padding-bottom: 0;
+                padding-left: round(@gutter-3-lg * .3334, 4); 
+                padding-right: round(@gutter-3-lg * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(3n+3),
+            &.grid-right > :nth-child(3n+1) {
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: round(@gutter-3-lg * .6667, 4); 
             }
             >.grid-block:not(:nth-last-child(-n+3)),
             >:nth-child(3n+3):nth-last-child(-3n+3),
@@ -981,26 +1057,29 @@
             width: 25%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(4n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-4-lg * .6667, 4); 
-                }
-                &:nth-child(4n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-4-lg * .3334, 4); 
-                    padding-right: round(@gutter-4-lg * .5, 4);
-                }
-                &:nth-child(4n+3) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-4-lg * .5, 4); 
-                    padding-right: round(@gutter-4-lg * .3334, 4); 
-                }
-                &:nth-child(4n+4) {
-                    padding-left: round(@gutter-4-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(4n+1),
+            &.grid-right > :nth-child(4n+4) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-4-lg * .75, 4);
+            }
+            &:not(.grid-right) > :nth-child(4n+2),
+            &.grid-right > :nth-child(4n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .25, 4); 
+                padding-right: round(@gutter-4-lg * .5, 4);
+            }
+            &:not(.grid-right) > :nth-child(4n+3),
+            &.grid-right > :nth-child(4n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .5, 4); 
+                padding-right: round(@gutter-4-lg * .25, 4); 
+            }
+            &:not(.grid-right) > :nth-child(4n+4),
+            &.grid-right > :nth-child(4n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-4-lg * .75, 4); 
+                padding-right: 0; 
             }
             >.grid-block:not(:nth-last-child(-n+4)),
             >:nth-child(4n+4):nth-last-child(-4n+4),
@@ -1019,31 +1098,35 @@
             width: 20%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(5n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-5-lg * .6667, 4); 
-                }
-                &:nth-child(5n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .3334, 4); 
-                    padding-right: round(@gutter-5-lg * .5, 4);
-                }
-                &:nth-child(5n+3) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .5, 4); 
-                    padding-right: round(@gutter-5-lg * .5, 4); 
-                }
-                &:nth-child(5n+4) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-5-lg * .5, 4); 
-                    padding-right: round(@gutter-5-lg * .3334, 4); 
-                }
-                &:nth-child(5n+5) {
-                    padding-left: round(@gutter-5-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(5n+1),
+            &.grid-right > :nth-child(5n+5) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-5-lg * .8, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+2),
+            &.grid-right > :nth-child(5n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-lg * .2, 4); 
+                padding-right: round(@gutter-5-lg * .6, 4);
+            }
+            &:not(.grid-right) > :nth-child(5n+3),
+            &.grid-right > :nth-child(5n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-lg * .4, 4); 
+                padding-right: round(@gutter-5-lg * .4, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+4),
+            &.grid-right > :nth-child(5n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-lg * .6, 4); 
+                padding-right: round(@gutter-5-lg * .2, 4); 
+            }
+            &:not(.grid-right) > :nth-child(5n+5),
+            &.grid-right > :nth-child(5n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-5-lg * .8, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+5)),
             >:nth-child(5n+5):nth-last-child(-5n+5),
@@ -1066,32 +1149,41 @@
             width: 16.6667%;
         }
         &:not(.grid-collapse) {
-            >.grid-block {
-                &:nth-child(6n+1) {
-                    padding-bottom: 0;
-                    padding-left: 0;
-                    padding-right: round(@gutter-6-lg * .6667, 4); 
-                }
-                &:nth-child(6n+2) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-lg * .3334, 4); 
-                    padding-right: round(@gutter-6-lg * .5, 4);
-                }
-                &:nth-child(6n+3),
-                &:nth-child(6n+4) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-lg * .5, 4); 
-                    padding-right: round(@gutter-6-lg * .5, 4); 
-                }
-                &:nth-child(6n+5) {
-                    padding-bottom: 0;
-                    padding-left: round(@gutter-6-lg * .5, 4); 
-                    padding-right: round(@gutter-6-lg * .3334, 4); 
-                }
-                &:nth-child(6n+6) {
-                    padding-left: round(@gutter-6-lg * .6667, 4); 
-                    padding-right: 0;
-                }
+            &:not(.grid-right) > :nth-child(6n+1),
+            &.grid-right > :nth-child(6n+6) {
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: round(@gutter-6-lg * .8334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+2),
+            &.grid-right > :nth-child(6n+5) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .1667, 4); 
+                padding-right: round(@gutter-6-lg * .6667, 4);
+            }
+            &:not(.grid-right) > :nth-child(6n+3),
+            &.grid-right > :nth-child(6n+4) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .3334, 4); 
+                padding-right: round(@gutter-6-lg * .5, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+4),
+            &.grid-right > :nth-child(6n+3) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .5, 4); 
+                padding-right: round(@gutter-6-lg * .3334, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+5),
+            &.grid-right > :nth-child(6n+2) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .6667, 4); 
+                padding-right: round(@gutter-6-lg * .1667, 4); 
+            }
+            &:not(.grid-right) > :nth-child(6n+6),
+            &.grid-right > :nth-child(6n+1) {
+                padding-bottom: 0;
+                padding-left: round(@gutter-6-lg * .8334, 4); 
+                padding-right: 0;
             }
             >.grid-block:not(:nth-last-child(-n+6)),
             >:nth-child(6n+6):nth-last-child(-6n+6),
